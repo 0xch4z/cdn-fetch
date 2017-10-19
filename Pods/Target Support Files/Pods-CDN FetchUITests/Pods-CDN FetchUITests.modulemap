@@ -1,0 +1,6 @@
+framework module Pods_CDN_FetchUITests {
+  umbrella header "Pods-CDN FetchUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

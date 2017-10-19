@@ -1,0 +1,6 @@
+framework module Pods_CDN_Fetch {
+  umbrella header "Pods-CDN Fetch-umbrella.h"
+
+  export *
+  module * { export * }
+}

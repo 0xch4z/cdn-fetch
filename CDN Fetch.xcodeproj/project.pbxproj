@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C3613674076C01C6640AC62 /* Pods_CDN_FetchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57D502F4473A06E3F295DF /* Pods_CDN_FetchUITests.framework */; };
+		439F1D41D08A8547D38D45C4 /* Pods_CDN_FetchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141099A1466ABD4A620157D8 /* Pods_CDN_FetchTests.framework */; };
+		56384C241F992D7A0009AF4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56384C231F992D7A0009AF4F /* AppDelegate.swift */; };
+		56384C271F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56384C251F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld */; };
+		56384C291F992D7A0009AF4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56384C281F992D7A0009AF4F /* Assets.xcassets */; };
+		56384C2C1F992D7A0009AF4F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56384C2A1F992D7A0009AF4F /* MainMenu.xib */; };
+		56384C381F992D7B0009AF4F /* CDN_FetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56384C371F992D7B0009AF4F /* CDN_FetchTests.swift */; };
+		56384C431F992D7B0009AF4F /* CDN_FetchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56384C421F992D7B0009AF4F /* CDN_FetchUITests.swift */; };
+		AA573FCF312BD5D1D6F8D92C /* Pods_CDN_Fetch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A487CA7885815CB2FE610B3 /* Pods_CDN_Fetch.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56384C341F992D7B0009AF4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56384C181F992D7A0009AF4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56384C1F1F992D7A0009AF4F;
+			remoteInfo = "CDN Fetch";
+		};
+		56384C3F1F992D7B0009AF4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56384C181F992D7A0009AF4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56384C1F1F992D7A0009AF4F;
+			remoteInfo = "CDN Fetch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		098AB9AE557671A52A7A1E38 /* Pods-CDN FetchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDN FetchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDN FetchUITests/Pods-CDN FetchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0D6BCCF6733B35F231253C28 /* Pods-CDN Fetch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDN Fetch.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDN Fetch/Pods-CDN Fetch.release.xcconfig"; sourceTree = "<group>"; };
+		141099A1466ABD4A620157D8 /* Pods_CDN_FetchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CDN_FetchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21074D17AB135143825A9C39 /* Pods-CDN FetchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDN FetchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDN FetchTests/Pods-CDN FetchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C1577CE32334A284D7CC4C3 /* Pods-CDN FetchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDN FetchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDN FetchUITests/Pods-CDN FetchUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		56384C201F992D7A0009AF4F /* CDN Fetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CDN Fetch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56384C231F992D7A0009AF4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		56384C261F992D7A0009AF4F /* CDN_Fetch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDN_Fetch.xcdatamodel; sourceTree = "<group>"; };
+		56384C281F992D7A0009AF4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56384C2B1F992D7A0009AF4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		56384C2D1F992D7A0009AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56384C2E1F992D7A0009AF4F /* CDN_Fetch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CDN_Fetch.entitlements; sourceTree = "<group>"; };
+		56384C331F992D7B0009AF4F /* CDN FetchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CDN FetchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56384C371F992D7B0009AF4F /* CDN_FetchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDN_FetchTests.swift; sourceTree = "<group>"; };
+		56384C391F992D7B0009AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56384C3E1F992D7B0009AF4F /* CDN FetchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CDN FetchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56384C421F992D7B0009AF4F /* CDN_FetchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDN_FetchUITests.swift; sourceTree = "<group>"; };
+		56384C441F992D7B0009AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76A6124A5A593C434DA284C6 /* Pods-CDN FetchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDN FetchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDN FetchTests/Pods-CDN FetchTests.release.xcconfig"; sourceTree = "<group>"; };
+		7A487CA7885815CB2FE610B3 /* Pods_CDN_Fetch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CDN_Fetch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10A1284EEB179CC485FC979 /* Pods-CDN Fetch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDN Fetch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDN Fetch/Pods-CDN Fetch.debug.xcconfig"; sourceTree = "<group>"; };
+		CD57D502F4473A06E3F295DF /* Pods_CDN_FetchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CDN_FetchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56384C1D1F992D7A0009AF4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA573FCF312BD5D1D6F8D92C /* Pods_CDN_Fetch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56384C301F992D7B0009AF4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439F1D41D08A8547D38D45C4 /* Pods_CDN_FetchTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56384C3B1F992D7B0009AF4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C3613674076C01C6640AC62 /* Pods_CDN_FetchUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56384C171F992D7A0009AF4F = {
+			isa = PBXGroup;
+			children = (
+				56384C221F992D7A0009AF4F /* CDN Fetch */,
+				56384C361F992D7B0009AF4F /* CDN FetchTests */,
+				56384C411F992D7B0009AF4F /* CDN FetchUITests */,
+				56384C211F992D7A0009AF4F /* Products */,
+				AB82F77ED59345F94382704C /* Pods */,
+				91AEA20E625CE054B121BC4C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		56384C211F992D7A0009AF4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56384C201F992D7A0009AF4F /* CDN Fetch.app */,
+				56384C331F992D7B0009AF4F /* CDN FetchTests.xctest */,
+				56384C3E1F992D7B0009AF4F /* CDN FetchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56384C221F992D7A0009AF4F /* CDN Fetch */ = {
+			isa = PBXGroup;
+			children = (
+				56384C231F992D7A0009AF4F /* AppDelegate.swift */,
+				56384C281F992D7A0009AF4F /* Assets.xcassets */,
+				56384C2A1F992D7A0009AF4F /* MainMenu.xib */,
+				56384C2D1F992D7A0009AF4F /* Info.plist */,
+				56384C2E1F992D7A0009AF4F /* CDN_Fetch.entitlements */,
+				56384C251F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld */,
+			);
+			path = "CDN Fetch";
+			sourceTree = "<group>";
+		};
+		56384C361F992D7B0009AF4F /* CDN FetchTests */ = {
+			isa = PBXGroup;
+			children = (
+				56384C371F992D7B0009AF4F /* CDN_FetchTests.swift */,
+				56384C391F992D7B0009AF4F /* Info.plist */,
+			);
+			path = "CDN FetchTests";
+			sourceTree = "<group>";
+		};
+		56384C411F992D7B0009AF4F /* CDN FetchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				56384C421F992D7B0009AF4F /* CDN_FetchUITests.swift */,
+				56384C441F992D7B0009AF4F /* Info.plist */,
+			);
+			path = "CDN FetchUITests";
+			sourceTree = "<group>";
+		};
+		91AEA20E625CE054B121BC4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A487CA7885815CB2FE610B3 /* Pods_CDN_Fetch.framework */,
+				141099A1466ABD4A620157D8 /* Pods_CDN_FetchTests.framework */,
+				CD57D502F4473A06E3F295DF /* Pods_CDN_FetchUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB82F77ED59345F94382704C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B10A1284EEB179CC485FC979 /* Pods-CDN Fetch.debug.xcconfig */,
+				0D6BCCF6733B35F231253C28 /* Pods-CDN Fetch.release.xcconfig */,
+				21074D17AB135143825A9C39 /* Pods-CDN FetchTests.debug.xcconfig */,
+				76A6124A5A593C434DA284C6 /* Pods-CDN FetchTests.release.xcconfig */,
+				2C1577CE32334A284D7CC4C3 /* Pods-CDN FetchUITests.debug.xcconfig */,
+				098AB9AE557671A52A7A1E38 /* Pods-CDN FetchUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56384C1F1F992D7A0009AF4F /* CDN Fetch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56384C471F992D7B0009AF4F /* Build configuration list for PBXNativeTarget "CDN Fetch" */;
+			buildPhases = (
+				3762FD4B5073F1240F6D80F7 /* [CP] Check Pods Manifest.lock */,
+				56384C1C1F992D7A0009AF4F /* Sources */,
+				56384C1D1F992D7A0009AF4F /* Frameworks */,
+				56384C1E1F992D7A0009AF4F /* Resources */,
+				03E1D4BC3C2EEC2E97310E4A /* [CP] Embed Pods Frameworks */,
+				5835A87D1682AA1D85370349 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CDN Fetch";
+			productName = "CDN Fetch";
+			productReference = 56384C201F992D7A0009AF4F /* CDN Fetch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56384C321F992D7B0009AF4F /* CDN FetchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56384C4A1F992D7B0009AF4F /* Build configuration list for PBXNativeTarget "CDN FetchTests" */;
+			buildPhases = (
+				B8113BE6C83454A0EEB17922 /* [CP] Check Pods Manifest.lock */,
+				56384C2F1F992D7B0009AF4F /* Sources */,
+				56384C301F992D7B0009AF4F /* Frameworks */,
+				56384C311F992D7B0009AF4F /* Resources */,
+				08D737118108198A04FA7538 /* [CP] Embed Pods Frameworks */,
+				BA5AE4C971361467F2B14C52 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56384C351F992D7B0009AF4F /* PBXTargetDependency */,
+			);
+			name = "CDN FetchTests";
+			productName = "CDN FetchTests";
+			productReference = 56384C331F992D7B0009AF4F /* CDN FetchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		56384C3D1F992D7B0009AF4F /* CDN FetchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56384C4D1F992D7B0009AF4F /* Build configuration list for PBXNativeTarget "CDN FetchUITests" */;
+			buildPhases = (
+				08E5420B90C49E9369A52860 /* [CP] Check Pods Manifest.lock */,
+				56384C3A1F992D7B0009AF4F /* Sources */,
+				56384C3B1F992D7B0009AF4F /* Frameworks */,
+				56384C3C1F992D7B0009AF4F /* Resources */,
+				B994782A6B571F9A158FE30D /* [CP] Embed Pods Frameworks */,
+				0A6703E3A51A5DBFE3F31CD1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56384C401F992D7B0009AF4F /* PBXTargetDependency */,
+			);
+			name = "CDN FetchUITests";
+			productName = "CDN FetchUITests";
+			productReference = 56384C3E1F992D7B0009AF4F /* CDN FetchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		56384C181F992D7A0009AF4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Charles Kenney";
+				TargetAttributes = {
+					56384C1F1F992D7A0009AF4F = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					56384C321F992D7B0009AF4F = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 56384C1F1F992D7A0009AF4F;
+					};
+					56384C3D1F992D7B0009AF4F = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 56384C1F1F992D7A0009AF4F;
+					};
+				};
+			};
+			buildConfigurationList = 56384C1B1F992D7A0009AF4F /* Build configuration list for PBXProject "CDN Fetch" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 56384C171F992D7A0009AF4F;
+			productRefGroup = 56384C211F992D7A0009AF4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56384C1F1F992D7A0009AF4F /* CDN Fetch */,
+				56384C321F992D7B0009AF4F /* CDN FetchTests */,
+				56384C3D1F992D7B0009AF4F /* CDN FetchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56384C1E1F992D7A0009AF4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56384C291F992D7A0009AF4F /* Assets.xcassets in Resources */,
+				56384C2C1F992D7A0009AF4F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56384C311F992D7B0009AF4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56384C3C1F992D7B0009AF4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03E1D4BC3C2EEC2E97310E4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CDN Fetch/Pods-CDN Fetch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CKNavigation/CKNavigation.framework",
+				"${BUILT_PRODUCTS_DIR}/STRegex/Regex.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CKNavigation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Regex.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CDN Fetch/Pods-CDN Fetch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		08D737118108198A04FA7538 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CDN FetchTests/Pods-CDN FetchTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		08E5420B90C49E9369A52860 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CDN FetchUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A6703E3A51A5DBFE3F31CD1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CDN FetchUITests/Pods-CDN FetchUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3762FD4B5073F1240F6D80F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CDN Fetch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5835A87D1682AA1D85370349 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CDN Fetch/Pods-CDN Fetch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8113BE6C83454A0EEB17922 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CDN FetchTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B994782A6B571F9A158FE30D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CDN FetchUITests/Pods-CDN FetchUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA5AE4C971361467F2B14C52 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CDN FetchTests/Pods-CDN FetchTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56384C1C1F992D7A0009AF4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56384C271F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld in Sources */,
+				56384C241F992D7A0009AF4F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56384C2F1F992D7B0009AF4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56384C381F992D7B0009AF4F /* CDN_FetchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56384C3A1F992D7B0009AF4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56384C431F992D7B0009AF4F /* CDN_FetchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56384C351F992D7B0009AF4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56384C1F1F992D7A0009AF4F /* CDN Fetch */;
+			targetProxy = 56384C341F992D7B0009AF4F /* PBXContainerItemProxy */;
+		};
+		56384C401F992D7B0009AF4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56384C1F1F992D7A0009AF4F /* CDN Fetch */;
+			targetProxy = 56384C3F1F992D7B0009AF4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		56384C2A1F992D7A0009AF4F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56384C2B1F992D7A0009AF4F /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		56384C451F992D7B0009AF4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		56384C461F992D7B0009AF4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		56384C481F992D7B0009AF4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10A1284EEB179CC485FC979 /* Pods-CDN Fetch.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CDN Fetch/CDN_Fetch.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 92E3TM2LT5;
+				INFOPLIST_FILE = "CDN Fetch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-Fetch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		56384C491F992D7B0009AF4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D6BCCF6733B35F231253C28 /* Pods-CDN Fetch.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CDN Fetch/CDN_Fetch.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 92E3TM2LT5;
+				INFOPLIST_FILE = "CDN Fetch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-Fetch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		56384C4B1F992D7B0009AF4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21074D17AB135143825A9C39 /* Pods-CDN FetchTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U4T3RQVCBL;
+				INFOPLIST_FILE = "CDN FetchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-FetchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CDN Fetch.app/Contents/MacOS/CDN Fetch";
+			};
+			name = Debug;
+		};
+		56384C4C1F992D7B0009AF4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76A6124A5A593C434DA284C6 /* Pods-CDN FetchTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U4T3RQVCBL;
+				INFOPLIST_FILE = "CDN FetchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-FetchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CDN Fetch.app/Contents/MacOS/CDN Fetch";
+			};
+			name = Release;
+		};
+		56384C4E1F992D7B0009AF4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C1577CE32334A284D7CC4C3 /* Pods-CDN FetchUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U4T3RQVCBL;
+				INFOPLIST_FILE = "CDN FetchUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-FetchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = "CDN Fetch";
+			};
+			name = Debug;
+		};
+		56384C4F1F992D7B0009AF4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 098AB9AE557671A52A7A1E38 /* Pods-CDN FetchUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U4T3RQVCBL;
+				INFOPLIST_FILE = "CDN FetchUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-FetchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = "CDN Fetch";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56384C1B1F992D7A0009AF4F /* Build configuration list for PBXProject "CDN Fetch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56384C451F992D7B0009AF4F /* Debug */,
+				56384C461F992D7B0009AF4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56384C471F992D7B0009AF4F /* Build configuration list for PBXNativeTarget "CDN Fetch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56384C481F992D7B0009AF4F /* Debug */,
+				56384C491F992D7B0009AF4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56384C4A1F992D7B0009AF4F /* Build configuration list for PBXNativeTarget "CDN FetchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56384C4B1F992D7B0009AF4F /* Debug */,
+				56384C4C1F992D7B0009AF4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56384C4D1F992D7B0009AF4F /* Build configuration list for PBXNativeTarget "CDN FetchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56384C4E1F992D7B0009AF4F /* Debug */,
+				56384C4F1F992D7B0009AF4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		56384C251F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				56384C261F992D7A0009AF4F /* CDN_Fetch.xcdatamodel */,
+			);
+			currentVersion = 56384C261F992D7A0009AF4F /* CDN_Fetch.xcdatamodel */;
+			path = CDN_Fetch.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 56384C181F992D7A0009AF4F /* Project object */;
+}

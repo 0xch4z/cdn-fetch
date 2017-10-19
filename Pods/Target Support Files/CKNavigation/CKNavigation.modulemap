@@ -1,0 +1,6 @@
+framework module CKNavigation {
+  umbrella header "CKNavigation-umbrella.h"
+
+  export *
+  module * { export * }
+}
