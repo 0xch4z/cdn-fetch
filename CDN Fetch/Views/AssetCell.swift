@@ -31,10 +31,17 @@ class AssetCell: NSTableCellView {
         }
     }
     
+    
     var fileImage = NSWorkspace.shared.icon(forFileType: "") {
         didSet {
             setupFileImage()
         }
+    }
+    
+    
+    private var assetUri: String {
+        let base = "https://cdnjs.cloudflare.com/ajax/libs"
+        return "\(base)/\(library ?? "")/\(version ?? "")/\(assetName ?? "")"
     }
 
     
@@ -67,6 +74,15 @@ class AssetCell: NSTableCellView {
     }()
     
     
+    let pasteboard = NSPasteboard.general
+    
+    
+    var library: String!
+    
+    
+    var version: String!
+    
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         setupView()
@@ -76,6 +92,7 @@ class AssetCell: NSTableCellView {
         setupFetchButton()
         setupFetchMenu()
         setupNameLabel()
+        setupPasteboard()
     }
     
     
@@ -149,6 +166,10 @@ class AssetCell: NSTableCellView {
         nameLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
+    func setupPasteboard() {
+        pasteboard.declareTypes([.string], owner: self)
+    }
+    
 }
 
 
@@ -169,23 +190,25 @@ extension AssetCell: NSMenuDelegate {
     
     
     @objc func fetchLinkTag(_ sender: Any?) {
-        print("fetch link tag pressed")
+        let tag = "<link rel=\"stylesheet\" href=\"\(assetUri)\" />"
+        pasteboard.setString(tag, forType: .string)
     }
     
     
     @objc func fetchScriptTag(_ sender: Any?) {
-        print("fetch script tag pressed")
+        let tag = "<script src=\"\(assetUri)\"></script>"
+        pasteboard.setString(tag, forType: .string)
     }
     
     
     @objc func copyUri(_ sender: Any?) {
-        print("copy uril tag pressed")
+        pasteboard.setString(assetUri, forType: .string)
     }
     
     
     @objc func addToFavorites(_ sender: Any?) {
         print("add to favorites pressed")
     }
-    
+
     
 }

@@ -144,7 +144,9 @@ extension AssetsController: NSTableViewDelegate, NSTableViewDataSource {
         let id = NSUserInterfaceItemIdentifier(rawValue: "COL")
         let cell = AssetCell()
         cell.identifier = id
-        cell.assetName = "file.js"
+        cell.assetName = "main.js"
+        cell.library = "jquery"
+        cell.version = "3.2.1"
         return cell
     }
     
