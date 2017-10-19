@@ -50,7 +50,6 @@ class AssetCell: NSTableCellView {
     
     let nameLabel: NSTextField = {
         let label = NSTextField()
-        label.alignment = .center
         label.isBezeled = false
         label.isEditable = false
         label.isBordered = false
@@ -163,7 +162,7 @@ class AssetCell: NSTableCellView {
         nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: fileImageView.rightAnchor, constant: 5).isActive = true
-        nameLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        nameLabel.rightAnchor.constraint(equalTo: fetchButton.leftAnchor, constant: -5).isActive = true
     }
     
     func setupPasteboard() {

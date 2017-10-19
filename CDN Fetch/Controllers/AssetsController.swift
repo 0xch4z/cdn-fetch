@@ -17,12 +17,27 @@ class AssetsController: CKNavigatableViewController {
     
     var library: String? {
         didSet {
-            
+            assetsTable.reloadData()
         }
     }
     
     
-    var assets: Array<Dictionary<String, Any>>? {
+    var version: String? {
+        didSet {
+            assetsTable.reloadData()
+        }
+    }
+    
+    
+    var versions: [String]? {
+        didSet {
+            // TODO: add to versions menu
+            print("got versions")
+        }
+    }
+    
+    
+    var assets: Dictionary<String, Any?>? {
         didSet {
             assetsTable.reloadData()
         }
@@ -66,6 +81,7 @@ class AssetsController: CKNavigatableViewController {
     convenience init(library: String) {
         self.init(nibName: nil, bundle: nil)
         self.library = library
+        fetchAssets(for: library)
     }
     
     
@@ -125,7 +141,61 @@ class AssetsController: CKNavigatableViewController {
 extension AssetsController {
     
     
+//    // MARK: - Query for library
+//    func searchLibraries(for term: String) {
+//        // make request
+//        Alamofire.request("https://api.cdnjs.com/libraries?search=\(term)&fields=license,description").responseJSON { res in
+//
+//            guard let data = res.result.value as? [String:Any] else {
+//                return print("no data")
+//            }
+//
+//            guard let results = data["results"] as? [[String:Any]] else {
+//                return print("no results")
+//            }
+//
+//            // set results
+//            self.searchResults = results
+//        }
+//    }
     
+    func fetchAssets(for library: String) {
+        // make request
+        Alamofire.request("https://api.cdnjs.com/libraries/\(library)").responseJSON { res in
+            
+            guard let data = res.result.value as? [String:Any?] else {
+                return print("no data")
+            }
+            
+            guard let assetsData = data["assets"] as? Array<Dictionary<String, Any?>> else {
+                return print("no assets")
+            }
+            
+            var versions: [String] = []
+            var assets: [String:Any?] = [:]
+            
+            for asset in assetsData {
+                // format version to corresponding assets for controller
+                guard let version = asset["version"] as? String,
+                      let files = asset["files"] as? [String] else {
+                    print("no version/files")
+                    continue
+                }
+                versions.append(version)
+                assets[version] = files
+            }
+            
+            // get latest version
+            if let latestVersion = data["version"] as? String {
+                self.version = latestVersion
+            } else {
+                self.version = versions.first ?? ""
+            }
+            
+            self.assets = assets
+            self.versions = versions
+        }
+    }
     
     
 }
@@ -137,16 +207,23 @@ extension AssetsController: NSTableViewDelegate, NSTableViewDataSource {
     
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return 5
+        let currVersion = version ?? ""
+        let currAssets = assets?[currVersion] as? [String] ?? []
+        return currAssets.count
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        // get data
+        let currVersion = version ?? ""
+        let currAssets = assets?[currVersion] as? [String] ?? []
+        let currAsset = currAssets[row]
+        // create row
         let id = NSUserInterfaceItemIdentifier(rawValue: "COL")
         let cell = AssetCell()
         cell.identifier = id
-        cell.assetName = "main.js"
-        cell.library = "jquery"
-        cell.version = "3.2.1"
+        cell.assetName = currAsset
+        cell.library = library ?? ""
+        cell.version = version ?? ""
         return cell
     }
     
