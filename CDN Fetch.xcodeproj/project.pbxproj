@@ -11,10 +11,21 @@
 		439F1D41D08A8547D38D45C4 /* Pods_CDN_FetchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141099A1466ABD4A620157D8 /* Pods_CDN_FetchTests.framework */; };
 		56384C241F992D7A0009AF4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56384C231F992D7A0009AF4F /* AppDelegate.swift */; };
 		56384C271F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56384C251F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld */; };
-		56384C291F992D7A0009AF4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56384C281F992D7A0009AF4F /* Assets.xcassets */; };
-		56384C2C1F992D7A0009AF4F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56384C2A1F992D7A0009AF4F /* MainMenu.xib */; };
 		56384C381F992D7B0009AF4F /* CDN_FetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56384C371F992D7B0009AF4F /* CDN_FetchTests.swift */; };
 		56384C431F992D7B0009AF4F /* CDN_FetchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56384C421F992D7B0009AF4F /* CDN_FetchUITests.swift */; };
+		567AA4611F993169006CBF92 /* FavoriteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294901F993028000BC941 /* FavoriteAsset.swift */; };
+		567AA4621F993169006CBF92 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294911F993028000BC941 /* AssetType.swift */; };
+		567AA4631F993169006CBF92 /* AssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2948B1F99301E000BC941 /* AssetCell.swift */; };
+		567AA4641F993169006CBF92 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2948C1F99301E000BC941 /* ResultCell.swift */; };
+		567AA4651F993169006CBF92 /* AssetsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2948D1F99301E000BC941 /* AssetsHeader.swift */; };
+		567AA4661F993169006CBF92 /* BrowseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2948E1F99301E000BC941 /* BrowseHeader.swift */; };
+		567AA4671F993169006CBF92 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294891F993008000BC941 /* String+Utils.swift */; };
+		567AA4681F993169006CBF92 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294841F992FE2000BC941 /* SettingsController.swift */; };
+		567AA4691F993169006CBF92 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294851F992FE2000BC941 /* FavoritesController.swift */; };
+		567AA46A1F993169006CBF92 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294861F992FE2000BC941 /* MainController.swift */; };
+		567AA46B1F993169006CBF92 /* AssetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294871F992FE2000BC941 /* AssetsController.swift */; };
+		567AA46C1F993169006CBF92 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294921F993031000BC941 /* main.swift */; };
+		567AA46D1F9933DD006CBF92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F294811F992FC7000BC941 /* Assets.xcassets */; };
 		AA573FCF312BD5D1D6F8D92C /* Pods_CDN_Fetch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A487CA7885815CB2FE610B3 /* Pods_CDN_Fetch.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +55,6 @@
 		56384C201F992D7A0009AF4F /* CDN Fetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CDN Fetch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56384C231F992D7A0009AF4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56384C261F992D7A0009AF4F /* CDN_Fetch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDN_Fetch.xcdatamodel; sourceTree = "<group>"; };
-		56384C281F992D7A0009AF4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		56384C2B1F992D7A0009AF4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		56384C2D1F992D7A0009AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56384C2E1F992D7A0009AF4F /* CDN_Fetch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CDN_Fetch.entitlements; sourceTree = "<group>"; };
 		56384C331F992D7B0009AF4F /* CDN FetchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CDN FetchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +63,19 @@
 		56384C3E1F992D7B0009AF4F /* CDN FetchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CDN FetchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56384C421F992D7B0009AF4F /* CDN_FetchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDN_FetchUITests.swift; sourceTree = "<group>"; };
 		56384C441F992D7B0009AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56F294811F992FC7000BC941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56F294841F992FE2000BC941 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		56F294851F992FE2000BC941 /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		56F294861F992FE2000BC941 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		56F294871F992FE2000BC941 /* AssetsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsController.swift; sourceTree = "<group>"; };
+		56F294891F993008000BC941 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		56F2948B1F99301E000BC941 /* AssetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCell.swift; sourceTree = "<group>"; };
+		56F2948C1F99301E000BC941 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		56F2948D1F99301E000BC941 /* AssetsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsHeader.swift; sourceTree = "<group>"; };
+		56F2948E1F99301E000BC941 /* BrowseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseHeader.swift; sourceTree = "<group>"; };
+		56F294901F993028000BC941 /* FavoriteAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAsset.swift; sourceTree = "<group>"; };
+		56F294911F993028000BC941 /* AssetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetType.swift; sourceTree = "<group>"; };
+		56F294921F993031000BC941 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		76A6124A5A593C434DA284C6 /* Pods-CDN FetchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDN FetchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDN FetchTests/Pods-CDN FetchTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A487CA7885815CB2FE610B3 /* Pods_CDN_Fetch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CDN_Fetch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10A1284EEB179CC485FC979 /* Pods-CDN Fetch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDN Fetch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDN Fetch/Pods-CDN Fetch.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,12 +135,16 @@
 		56384C221F992D7A0009AF4F /* CDN Fetch */ = {
 			isa = PBXGroup;
 			children = (
+				56F2948F1F993028000BC941 /* Models */,
+				56F2948A1F99301E000BC941 /* Views */,
+				56F294881F993008000BC941 /* Helpers */,
+				56F294831F992FE2000BC941 /* Controllers */,
 				56384C231F992D7A0009AF4F /* AppDelegate.swift */,
-				56384C281F992D7A0009AF4F /* Assets.xcassets */,
-				56384C2A1F992D7A0009AF4F /* MainMenu.xib */,
 				56384C2D1F992D7A0009AF4F /* Info.plist */,
 				56384C2E1F992D7A0009AF4F /* CDN_Fetch.entitlements */,
 				56384C251F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld */,
+				56F294811F992FC7000BC941 /* Assets.xcassets */,
+				56F294921F993031000BC941 /* main.swift */,
 			);
 			path = "CDN Fetch";
 			sourceTree = "<group>";
@@ -139,6 +165,45 @@
 				56384C441F992D7B0009AF4F /* Info.plist */,
 			);
 			path = "CDN FetchUITests";
+			sourceTree = "<group>";
+		};
+		56F294831F992FE2000BC941 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				56F294841F992FE2000BC941 /* SettingsController.swift */,
+				56F294851F992FE2000BC941 /* FavoritesController.swift */,
+				56F294861F992FE2000BC941 /* MainController.swift */,
+				56F294871F992FE2000BC941 /* AssetsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		56F294881F993008000BC941 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				56F294891F993008000BC941 /* String+Utils.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		56F2948A1F99301E000BC941 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56F2948B1F99301E000BC941 /* AssetCell.swift */,
+				56F2948C1F99301E000BC941 /* ResultCell.swift */,
+				56F2948D1F99301E000BC941 /* AssetsHeader.swift */,
+				56F2948E1F99301E000BC941 /* BrowseHeader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		56F2948F1F993028000BC941 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56F294901F993028000BC941 /* FavoriteAsset.swift */,
+				56F294911F993028000BC941 /* AssetType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		91AEA20E625CE054B121BC4C /* Frameworks */ = {
@@ -280,8 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56384C291F992D7A0009AF4F /* Assets.xcassets in Resources */,
-				56384C2C1F992D7A0009AF4F /* MainMenu.xib in Resources */,
+				567AA46D1F9933DD006CBF92 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,8 +524,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				567AA4661F993169006CBF92 /* BrowseHeader.swift in Sources */,
+				567AA4621F993169006CBF92 /* AssetType.swift in Sources */,
 				56384C271F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld in Sources */,
+				567AA4641F993169006CBF92 /* ResultCell.swift in Sources */,
+				567AA46A1F993169006CBF92 /* MainController.swift in Sources */,
+				567AA46B1F993169006CBF92 /* AssetsController.swift in Sources */,
+				567AA4631F993169006CBF92 /* AssetCell.swift in Sources */,
+				567AA4671F993169006CBF92 /* String+Utils.swift in Sources */,
+				567AA46C1F993169006CBF92 /* main.swift in Sources */,
+				567AA4681F993169006CBF92 /* SettingsController.swift in Sources */,
+				567AA4611F993169006CBF92 /* FavoriteAsset.swift in Sources */,
 				56384C241F992D7A0009AF4F /* AppDelegate.swift in Sources */,
+				567AA4651F993169006CBF92 /* AssetsHeader.swift in Sources */,
+				567AA4691F993169006CBF92 /* FavoritesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,17 +571,6 @@
 			targetProxy = 56384C3F1F992D7B0009AF4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		56384C2A1F992D7A0009AF4F /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				56384C2B1F992D7A0009AF4F /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		56384C451F992D7B0009AF4F /* Debug */ = {
@@ -619,7 +684,7 @@
 			baseConfigurationReference = B10A1284EEB179CC485FC979 /* Pods-CDN Fetch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "CDN Fetch/CDN_Fetch.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 92E3TM2LT5;
@@ -628,6 +693,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-Fetch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -637,7 +703,7 @@
 			baseConfigurationReference = 0D6BCCF6733B35F231253C28 /* Pods-CDN Fetch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "CDN Fetch/CDN_Fetch.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 92E3TM2LT5;
@@ -646,6 +712,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-Fetch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -656,13 +723,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = U4T3RQVCBL;
+				DEVELOPMENT_TEAM = 92E3TM2LT5;
 				INFOPLIST_FILE = "CDN FetchTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-FetchTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CDN Fetch.app/Contents/MacOS/CDN Fetch";
 			};
@@ -674,13 +743,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = U4T3RQVCBL;
+				DEVELOPMENT_TEAM = 92E3TM2LT5;
 				INFOPLIST_FILE = "CDN FetchTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-FetchTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CDN Fetch.app/Contents/MacOS/CDN Fetch";
 			};
