@@ -1,6 +1,6 @@
 //
 //  AssetsHeader.swift
-//  CDNFetchBeta
+//  CDN Fetch
 //
 //  Created by Charles Kenney on 10/19/17.
 //  Copyright © 2017 Charles Kenney. All rights reserved.
@@ -17,12 +17,6 @@ class AssetsHeader: NSView {
         return btn
     }()
     
-    let testImage: NSImageView = {
-        let img = NSImageView()
-        img.image = NSWorkspace.shared.icon(forFileType: "rb")
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
-    }()
     
     let nameLabel: NSTextField = {
         let label = NSTextField()
@@ -56,6 +50,7 @@ class AssetsHeader: NSView {
     }
     
     
+    // Add back button constraints
     func setupBackButton() {
         backButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
         backButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
@@ -64,19 +59,12 @@ class AssetsHeader: NSView {
     }
     
     
+    // Add name label constraints
     func setupNameLabel() {
         nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 55).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -55).isActive = true
-    }
-    
-    
-    func setupTestImage() {
-        testImage.heightAnchor.constraint(equalToConstant: 45).isActive = true
-        testImage.widthAnchor.constraint(equalToConstant: 45).isActive = true
-        testImage.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        testImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 5).isActive = true
     }
     
     

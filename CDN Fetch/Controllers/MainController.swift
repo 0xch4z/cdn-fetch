@@ -1,6 +1,6 @@
 //
 //  MainController.swift
-//  CDNFetchBeta
+//  CDN Fetch
 //
 //  Created by Charles Kenney on 10/18/17.
 //  Copyright © 2017 Charles Kenney. All rights reserved.
@@ -25,7 +25,6 @@ class MainController: CKNavigatableViewController {
     var transitioningController: Bool = false
     
     
-    // MARK: - Make library search field
     let searchField: NSSearchField = {
         let field = NSSearchField()
         field.font = NSFont(name: "Helvetica Neue Thin", size: 15)
@@ -35,7 +34,6 @@ class MainController: CKNavigatableViewController {
     }()
     
     
-    // MARK: - Make table container
     let scrollView: NSScrollView = {
         let scroll = NSScrollView()
         scroll.wantsLayer = false
@@ -45,7 +43,6 @@ class MainController: CKNavigatableViewController {
     }()
     
     
-    // MARK: - Make results table view
     let resultsTable: NSTableView = {
         let table = NSTableView()
         table.rowHeight = 90
@@ -57,7 +54,6 @@ class MainController: CKNavigatableViewController {
     }()
     
     
-    // MARK: - Make primary table column
     let column: NSTableColumn = {
         let col = NSTableColumn()
         col.identifier = NSUserInterfaceItemIdentifier(rawValue: "COL")
@@ -90,7 +86,7 @@ class MainController: CKNavigatableViewController {
     }
     
     
-    // MARK: - Setup search field & constraints
+    // Setup search field & constraints
     func setupSearchField() {
         searchField.target = self
         searchField.action = #selector(searchTermHasUpdated(_:))
@@ -101,7 +97,7 @@ class MainController: CKNavigatableViewController {
     }
     
     
-    // MARK: - Setup results table & constraints
+    // Setup results table & constraints
     func setupResultsTable() {
         resultsTable.addTableColumn(column)
         resultsTable.delegate = self
@@ -120,17 +116,18 @@ class MainController: CKNavigatableViewController {
 
 
 
-// MARK: - Networking stuff
+// MARK: - Networking Tasks
 extension MainController: NSSearchFieldDelegate {
     
     
     @objc func searchTermHasUpdated(_ sender: NSTextField) {
+        // fetch libraries on search field event
         let term = sender.stringValue
         searchLibraries(for: term)
     }
     
     
-    // MARK: - Query for library
+    // Query for library
     func searchLibraries(for term: String) {
         // make request
         Alamofire.request("https://api.cdnjs.com/libraries?search=\(term)&fields=license,description").responseJSON { res in
@@ -162,7 +159,7 @@ extension MainController: NSTableViewDelegate, NSTableViewDataSource {
     }
     
     
-    // MARK: - Render library table cells
+    // Render library table cells
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let id = NSUserInterfaceItemIdentifier(rawValue: "COL")
         // get data by row index
@@ -178,7 +175,7 @@ extension MainController: NSTableViewDelegate, NSTableViewDataSource {
     }
     
     
-    // MARK: - Push library assets view
+    // Push library assets view
     func tableViewSelectionDidChange(_ notification: Notification) {
         let row = resultsTable.selectedRow
         if (row != -1) {
@@ -187,6 +184,7 @@ extension MainController: NSTableViewDelegate, NSTableViewDataSource {
             self.navigationController?.pushViewController(AssetsController(library: name))
         }
     }
+    
     
     override func viewDidAppear() {
         self.resultsTable.deselectAll(nil)

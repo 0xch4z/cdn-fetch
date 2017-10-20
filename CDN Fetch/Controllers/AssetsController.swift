@@ -1,6 +1,6 @@
 //
 //  AssetsController.swift
-//  CDNFetchBeta
+//  CDN Fetch
 //
 //  Created by Charles Kenney on 10/18/17.
 //  Copyright © 2017 Charles Kenney. All rights reserved.
@@ -104,12 +104,14 @@ class AssetsController: CKNavigatableViewController {
     }
     
     
+    // MARK: - Add subviews
     func addViews() {
         self.view.addSubview(scrollView)
         self.view.addSubview(header)
     }
     
     
+    // MARK: - Setup header and add constraints
     func setupHeader() {
         header.backButton.target = self
         header.backButton.action = #selector(goBack(_:))
@@ -120,6 +122,7 @@ class AssetsController: CKNavigatableViewController {
     }
     
     
+    // MARK: - Setup table and add constraints
     func setupAssetsTable() {
         assetsTable.addTableColumn(column)
         assetsTable.delegate = self
@@ -137,28 +140,11 @@ class AssetsController: CKNavigatableViewController {
 
 
 
-// MARK: - Networking Stuff
+// MARK: - Networking Tasks
 extension AssetsController {
     
     
-//    // MARK: - Query for library
-//    func searchLibraries(for term: String) {
-//        // make request
-//        Alamofire.request("https://api.cdnjs.com/libraries?search=\(term)&fields=license,description").responseJSON { res in
-//
-//            guard let data = res.result.value as? [String:Any] else {
-//                return print("no data")
-//            }
-//
-//            guard let results = data["results"] as? [[String:Any]] else {
-//                return print("no results")
-//            }
-//
-//            // set results
-//            self.searchResults = results
-//        }
-//    }
-    
+    // Fetch assets for the current library
     func fetchAssets(for library: String) {
         // make request
         Alamofire.request("https://api.cdnjs.com/libraries/\(library)").responseJSON { res in
@@ -174,6 +160,8 @@ extension AssetsController {
             var versions: [String] = []
             var assets: [String:Any?] = [:]
             
+            // break up data in a consumable format
+            // access assets by their corresponding versions
             for asset in assetsData {
                 // format version to corresponding assets for controller
                 guard let version = asset["version"] as? String,
@@ -206,18 +194,21 @@ extension AssetsController {
 extension AssetsController: NSTableViewDelegate, NSTableViewDataSource {
     
     
+    // Set the table rows
     func numberOfRows(in tableView: NSTableView) -> Int {
         let currVersion = version ?? ""
         let currAssets = assets?[currVersion] as? [String] ?? []
         return currAssets.count
     }
     
+    
+    // Render asset cell rows
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        // get data
+        // Get library info
         let currVersion = version ?? ""
         let currAssets = assets?[currVersion] as? [String] ?? []
         let currAsset = currAssets[row]
-        // create row
+        // Creat row
         let id = NSUserInterfaceItemIdentifier(rawValue: "COL")
         let cell = AssetCell()
         cell.identifier = id
@@ -226,6 +217,7 @@ extension AssetsController: NSTableViewDelegate, NSTableViewDataSource {
         cell.version = version ?? ""
         return cell
     }
+    
     
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         return false
@@ -236,6 +228,7 @@ extension AssetsController: NSTableViewDelegate, NSTableViewDataSource {
 
 
 
+// MARK: - Navigatable
 extension AssetsController {
     
     

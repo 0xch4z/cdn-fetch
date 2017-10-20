@@ -1,6 +1,6 @@
 //
 //  AssetCell.swift
-//  CDNFetchBeta
+//  CDN Fetch
 //
 //  Created by Charles Kenney on 10/18/17.
 //  Copyright © 2017 Charles Kenney. All rights reserved.
@@ -20,7 +20,6 @@ class AssetCell: NSTableCellView {
                 nameLabel.stringValue = text
                 fileImage = NSWorkspace.shared.icon(forFileType: ext)
                 assetType = AssetType.getFileType(forExtension: ext)
-                print("go type => \(assetType) for ext => \(ext)")
             }
         }
     }
@@ -54,7 +53,7 @@ class AssetCell: NSTableCellView {
         label.isBezeled = false
         label.isEditable = false
         label.isBordered = false
-        label.font = NSFont(name: "Helvetica Neue", size: 12)
+        label.font = NSFont(name: "Apple SD Gothic Neo", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
