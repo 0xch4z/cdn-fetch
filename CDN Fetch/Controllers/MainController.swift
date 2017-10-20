@@ -61,6 +61,23 @@ class MainController: CKNavigatableViewController {
     }()
     
     
+    let favoritesButton: NSButton = {
+        let button = NSButton(image: #imageLiteral(resourceName: "Heart"), target: nil, action: nil)
+        button.isBordered = false
+        button.isSpringLoaded = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    
+    let settingsButton: NSButton = {
+        let button = NSButton(image: #imageLiteral(resourceName: "Settings"), target: nil, action: nil)
+        button.isBordered = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    
     override func loadView() {
         self.view = NSView()
     }
@@ -71,9 +88,12 @@ class MainController: CKNavigatableViewController {
         setupView()
         addViews()
         setupSearchField()
+        setupFavoritesButton()
+        setupSettingsButton()
         setupResultsTable()
         searchLibraries(for: "")
     }
+    
     
     func setupView() {
         self.view.translatesAutoresizingMaskIntoConstraints = false
@@ -86,6 +106,8 @@ class MainController: CKNavigatableViewController {
     func addViews() {
         self.view.addSubview(searchField)
         self.view.addSubview(scrollView)
+        self.view.addSubview(favoritesButton)
+        self.view.addSubview(settingsButton)
     }
     
     
@@ -93,10 +115,32 @@ class MainController: CKNavigatableViewController {
     func setupSearchField() {
         searchField.target = self
         searchField.action = #selector(searchTermHasUpdated(_:))
-        searchField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = true
-        searchField.heightAnchor.constraint(equalToConstant: 23).isActive = true
-        searchField.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        searchField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        searchField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 15).isActive = true
+        searchField.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        searchField.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
+        searchField.widthAnchor.constraint(equalToConstant: 280).isActive = true
+    }
+    
+    
+    // setup favorites button & constraints
+    func setupFavoritesButton() {
+        favoritesButton.target = self
+        favoritesButton.action = #selector(launchFavorites(_:))
+        favoritesButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16).isActive = true
+        favoritesButton.leftAnchor.constraint(equalTo: searchField.rightAnchor, constant: 5).isActive = true
+        favoritesButton.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        favoritesButton.widthAnchor.constraint(equalToConstant: 18).isActive = true
+    }
+    
+    
+    // setup settings button & constraints
+    func setupSettingsButton() {
+        settingsButton.target = self
+        settingsButton.action = #selector(launchSettings(_:))
+        settingsButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 15).isActive = true
+        settingsButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
+        settingsButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        settingsButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
     }
     
     
@@ -113,6 +157,7 @@ class MainController: CKNavigatableViewController {
         scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         resultsTable.reloadData()
     }
+
     
     
 }
@@ -190,6 +235,24 @@ extension MainController: NSTableViewDelegate, NSTableViewDataSource {
     
     override func viewDidAppear() {
         self.resultsTable.deselectAll(nil)
+    }
+    
+    
+}
+
+
+
+// MARK: - Actions
+extension MainController {
+    
+    
+    @objc func launchSettings(_ sender: Any?) {
+        print("todo: launch settings")
+    }
+    
+    
+    @objc func launchFavorites(_ sender: Any?) {
+        print("todo: launch favorites")
     }
     
     

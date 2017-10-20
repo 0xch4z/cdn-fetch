@@ -13,6 +13,7 @@ class AssetsHeader: NSView {
     
     let backButton: NSButton = {
         let btn = NSButton(image: #imageLiteral(resourceName: "BackButton"), target: nil, action: nil)
+        btn.isBordered = false
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -52,8 +53,8 @@ class AssetsHeader: NSView {
     
     // Add back button constraints
     func setupBackButton() {
-        backButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        backButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        backButton.widthAnchor.constraint(equalToConstant: 35).isActive = true
         backButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         backButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
     }
