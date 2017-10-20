@@ -14,13 +14,18 @@ enum AssetType {
     case map
     case generic
     
+    public static func getExtensionFor(fileName: String) -> String {
+        let ext = fileName.split(separator: ".").last ?? ""
+        return String(ext)
+    }
+    
     public static func getFileType(forExtension ext: String) -> AssetType {
         switch (ext) {
-        case ".js", ".jsx":
+        case "js", "jsx":
             return .javascript
-        case ".css":
+        case "css":
             return .css
-        case ".map":
+        case "map":
             return .map
         default:
             return .generic

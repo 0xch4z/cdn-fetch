@@ -16,10 +16,11 @@ class AssetCell: NSTableCellView {
     var assetName: String? {
         didSet {
             if let text = assetName {
-                let ext = text.getFileExtension()
+                let ext = AssetType.getExtensionFor(fileName: text)
                 nameLabel.stringValue = text
                 fileImage = NSWorkspace.shared.icon(forFileType: ext)
                 assetType = AssetType.getFileType(forExtension: ext)
+                print("go type => \(assetType) for ext => \(ext)")
             }
         }
     }
