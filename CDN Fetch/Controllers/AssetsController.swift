@@ -100,6 +100,9 @@ class AssetsController: CKNavigatableViewController {
     
     
     func setupView() {
+        self.view.translatesAutoresizingMaskIntoConstraints = false
+        self.view.widthAnchor.constraint(equalToConstant: 350).isActive = true
+        self.view.heightAnchor.constraint(equalToConstant: 500).isActive = true
         self.view.wantsLayer = true
     }
     
@@ -132,7 +135,7 @@ class AssetsController: CKNavigatableViewController {
         scrollView.hasVerticalScroller = true
         scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50).isActive = true
         scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
-        scrollView.heightAnchor.constraint(equalToConstant: 445).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
     
     
