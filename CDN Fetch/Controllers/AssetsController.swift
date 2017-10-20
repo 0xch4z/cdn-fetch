@@ -73,7 +73,7 @@ class AssetsController: CKNavigatableViewController {
     
     let column: NSTableColumn = {
         let col = NSTableColumn()
-        col.identifier = NSUserInterfaceItemIdentifier(rawValue: "COL")
+        col.identifier = .assetColumn
         return col
     }()
     
@@ -209,9 +209,8 @@ extension AssetsController: NSTableViewDelegate, NSTableViewDataSource {
         let currAssets = assets?[currVersion] as? [String] ?? []
         let currAsset = currAssets[row]
         // Creat row
-        let id = NSUserInterfaceItemIdentifier(rawValue: "COL")
         let cell = AssetCell()
-        cell.identifier = id
+        cell.identifier = .assetRow
         cell.assetName = currAsset
         cell.library = library ?? ""
         cell.version = version ?? ""

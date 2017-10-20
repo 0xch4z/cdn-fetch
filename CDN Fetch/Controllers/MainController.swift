@@ -56,7 +56,7 @@ class MainController: CKNavigatableViewController {
     
     let column: NSTableColumn = {
         let col = NSTableColumn()
-        col.identifier = NSUserInterfaceItemIdentifier(rawValue: "COL")
+        col.identifier = .resultColumn
         return col
     }()
     
@@ -161,13 +161,12 @@ extension MainController: NSTableViewDelegate, NSTableViewDataSource {
     
     // Render library table cells
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let id = NSUserInterfaceItemIdentifier(rawValue: "COL")
         // get data by row index
         let result = searchResults[row]
         let cell = ResultCell()
         let license = result["license"] as? String ?? ""
         // fill in cell
-        cell.identifier = id
+        cell.identifier = .resultRow
         cell.nameText = result["name"] as? String ?? ""
         cell.descriptionText = result["description"] as? String ?? "Non-descript."
         cell.licenseText = String(license.characters.prefix(3))

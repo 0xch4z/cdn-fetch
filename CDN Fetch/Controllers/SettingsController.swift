@@ -21,7 +21,6 @@ class SettingsController: CKNavigatableViewController {
     
     override func loadView() {
         self.view = NSView()
-        print("i loaded")
     }
     
     override func viewDidLoad() {
@@ -29,7 +28,6 @@ class SettingsController: CKNavigatableViewController {
         setupView()
         addViews()
         setupButton()
-        print("finished view did load")
     }
     
     func setupView() {
