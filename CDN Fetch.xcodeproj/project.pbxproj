@@ -11,7 +11,6 @@
 		439F1D41D08A8547D38D45C4 /* Pods_CDN_FetchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141099A1466ABD4A620157D8 /* Pods_CDN_FetchTests.framework */; };
 		56384C241F992D7A0009AF4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56384C231F992D7A0009AF4F /* AppDelegate.swift */; };
 		56384C271F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56384C251F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld */; };
-		56384C381F992D7B0009AF4F /* CDN_FetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56384C371F992D7B0009AF4F /* CDN_FetchTests.swift */; };
 		56384C431F992D7B0009AF4F /* CDN_FetchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56384C421F992D7B0009AF4F /* CDN_FetchUITests.swift */; };
 		567AA4611F993169006CBF92 /* FavoriteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294901F993028000BC941 /* FavoriteAsset.swift */; };
 		567AA4621F993169006CBF92 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294911F993028000BC941 /* AssetType.swift */; };
@@ -26,6 +25,7 @@
 		567AA46B1F993169006CBF92 /* AssetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294871F992FE2000BC941 /* AssetsController.swift */; };
 		567AA46C1F993169006CBF92 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294921F993031000BC941 /* main.swift */; };
 		567AA46D1F9933DD006CBF92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F294811F992FC7000BC941 /* Assets.xcassets */; };
+		56BB2A251F9A6654004A33E0 /* AssetTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB2A241F9A6654004A33E0 /* AssetTypeTests.swift */; };
 		AA573FCF312BD5D1D6F8D92C /* Pods_CDN_Fetch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A487CA7885815CB2FE610B3 /* Pods_CDN_Fetch.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,11 +58,11 @@
 		56384C2D1F992D7A0009AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56384C2E1F992D7A0009AF4F /* CDN_Fetch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CDN_Fetch.entitlements; sourceTree = "<group>"; };
 		56384C331F992D7B0009AF4F /* CDN FetchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CDN FetchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		56384C371F992D7B0009AF4F /* CDN_FetchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDN_FetchTests.swift; sourceTree = "<group>"; };
 		56384C391F992D7B0009AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56384C3E1F992D7B0009AF4F /* CDN FetchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CDN FetchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56384C421F992D7B0009AF4F /* CDN_FetchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDN_FetchUITests.swift; sourceTree = "<group>"; };
 		56384C441F992D7B0009AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56BB2A241F9A6654004A33E0 /* AssetTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTypeTests.swift; sourceTree = "<group>"; };
 		56F294811F992FC7000BC941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56F294841F992FE2000BC941 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		56F294851F992FE2000BC941 /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 		56384C361F992D7B0009AF4F /* CDN FetchTests */ = {
 			isa = PBXGroup;
 			children = (
-				56384C371F992D7B0009AF4F /* CDN_FetchTests.swift */,
 				56384C391F992D7B0009AF4F /* Info.plist */,
+				56BB2A241F9A6654004A33E0 /* AssetTypeTests.swift */,
 			);
 			path = "CDN FetchTests";
 			sourceTree = "<group>";
@@ -307,6 +307,11 @@
 					56384C1F1F992D7A0009AF4F = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					56384C321F992D7B0009AF4F = {
 						CreatedOnToolsVersion = 9.0;
@@ -545,7 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56384C381F992D7B0009AF4F /* CDN_FetchTests.swift in Sources */,
+				56BB2A251F9A6654004A33E0 /* AssetTypeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +689,7 @@
 			baseConfigurationReference = B10A1284EEB179CC485FC979 /* Pods-CDN Fetch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CDN Fetch/CDN_Fetch.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -703,6 +709,7 @@
 			baseConfigurationReference = 0D6BCCF6733B35F231253C28 /* Pods-CDN Fetch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CDN Fetch/CDN_Fetch.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -762,13 +769,15 @@
 			baseConfigurationReference = 2C1577CE32334A284D7CC4C3 /* Pods-CDN FetchUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = U4T3RQVCBL;
+				DEVELOPMENT_TEAM = 92E3TM2LT5;
 				INFOPLIST_FILE = "CDN FetchUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-FetchUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "CDN Fetch";
 			};
@@ -779,13 +788,15 @@
 			baseConfigurationReference = 098AB9AE557671A52A7A1E38 /* Pods-CDN FetchUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = U4T3RQVCBL;
+				DEVELOPMENT_TEAM = 92E3TM2LT5;
 				INFOPLIST_FILE = "CDN FetchUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-FetchUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "CDN Fetch";
 			};
