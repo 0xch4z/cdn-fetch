@@ -54,7 +54,7 @@ class AssetCell: NSTableCellView {
         label.isBezeled = false
         label.isEditable = false
         label.isBordered = false
-        label.font = NSFont(name: "Helvetica Neue Thin", size: 18)
+        label.font = NSFont(name: "Helvetica Neue", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -72,9 +72,6 @@ class AssetCell: NSTableCellView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
-    
-    
-    let pasteboard = NSPasteboard.general
     
     
     var library: String!
@@ -111,8 +108,8 @@ class AssetCell: NSTableCellView {
     
     func setupFileImageView() {
         fileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        fileImageView.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        fileImageView.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        fileImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        fileImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         fileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
     }
     
@@ -125,11 +122,10 @@ class AssetCell: NSTableCellView {
         fetchButton.target = self
         fetchButton.action = #selector(showMenu(_:))
         fetchButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        fetchButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        fetchButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        fetchButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        fetchButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
         fetchButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
     }
-    
     
     func setupFetchMenu() {
         fetchMenu = NSMenu()
@@ -161,13 +157,13 @@ class AssetCell: NSTableCellView {
     
     func setupNameLabel() {
         nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: fileImageView.rightAnchor, constant: 5).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: fetchButton.leftAnchor, constant: -5).isActive = true
     }
     
     func setupPasteboard() {
-        pasteboard.declareTypes([.string], owner: self)
+
     }
     
 }
@@ -191,17 +187,23 @@ extension AssetCell: NSMenuDelegate {
     
     @objc func fetchLinkTag(_ sender: Any?) {
         let tag = "<link rel=\"stylesheet\" href=\"\(assetUri)\" />"
+        let pasteboard = NSPasteboard.general
+        pasteboard.declareTypes([.string], owner: self)
         pasteboard.setString(tag, forType: .string)
     }
     
     
     @objc func fetchScriptTag(_ sender: Any?) {
         let tag = "<script src=\"\(assetUri)\"></script>"
+        let pasteboard = NSPasteboard.general
+        pasteboard.declareTypes([.string], owner: self)
         pasteboard.setString(tag, forType: .string)
     }
     
     
     @objc func copyUri(_ sender: Any?) {
+        let pasteboard = NSPasteboard.general
+        pasteboard.declareTypes([.string], owner: self)
         pasteboard.setString(assetUri, forType: .string)
     }
     
