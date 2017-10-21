@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum AssetType {
+@objc(AssetType)
+enum AssetType: Int16 {
     case javascript
     case css
     case map

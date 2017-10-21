@@ -208,7 +208,21 @@ extension AssetCell: NSMenuDelegate {
     
     
     @objc func addToFavorites(_ sender: Any?) {
-        print("add to favorites pressed")
+        // get app delegate reference
+        guard let delegate = NSApplication.shared.delegate as? AppDelegate else {
+            print("could not get app delegate")
+            return
+        }
+        // get managed object context reference
+        let context = delegate.persistentContainer.viewContext
+        // save new favorite entry
+        let newAsset = NSEntityDescription.insertNewObject(forEntityName: "FavoriteAsset", into: context) as! FavoriteAsset
+        newAsset.name = assetName ?? ""
+//        newAsset.type = assetType
+        newAsset.library = library
+        newAsset.version = version
+        newAsset.uri = assetUri
+        delegate.saveAction(nil)
     }
 
     

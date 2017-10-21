@@ -12,7 +12,6 @@
 		56384C241F992D7A0009AF4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56384C231F992D7A0009AF4F /* AppDelegate.swift */; };
 		56384C271F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56384C251F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld */; };
 		56384C431F992D7B0009AF4F /* CDN_FetchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56384C421F992D7B0009AF4F /* CDN_FetchUITests.swift */; };
-		567AA4611F993169006CBF92 /* FavoriteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294901F993028000BC941 /* FavoriteAsset.swift */; };
 		567AA4621F993169006CBF92 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294911F993028000BC941 /* AssetType.swift */; };
 		567AA4631F993169006CBF92 /* AssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2948B1F99301E000BC941 /* AssetCell.swift */; };
 		567AA4641F993169006CBF92 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2948C1F99301E000BC941 /* ResultCell.swift */; };
@@ -25,6 +24,7 @@
 		567AA46C1F993169006CBF92 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294921F993031000BC941 /* main.swift */; };
 		567AA46D1F9933DD006CBF92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F294811F992FC7000BC941 /* Assets.xcassets */; };
 		56BB2A251F9A6654004A33E0 /* AssetTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB2A241F9A6654004A33E0 /* AssetTypeTests.swift */; };
+		56D0EA851F9AEDFF00762165 /* FavoriteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0EA841F9AEDFF00762165 /* FavoriteAsset.swift */; };
 		56DDDE381F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DDDE371F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift */; };
 		56DDDE391F9A823000C715DC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56384C2D1F992D7A0009AF4F /* Info.plist */; };
 		56DDDE3F1F9AA50200C715DC /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DDDE3E1F9AA50200C715DC /* SettingsWindow.swift */; };
@@ -66,6 +66,7 @@
 		56384C421F992D7B0009AF4F /* CDN_FetchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDN_FetchUITests.swift; sourceTree = "<group>"; };
 		56384C441F992D7B0009AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56BB2A241F9A6654004A33E0 /* AssetTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTypeTests.swift; sourceTree = "<group>"; };
+		56D0EA841F9AEDFF00762165 /* FavoriteAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAsset.swift; sourceTree = "<group>"; };
 		56DDDE371F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUserInterfaceItem+Identifiers.swift"; sourceTree = "<group>"; };
 		56DDDE3E1F9AA50200C715DC /* SettingsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindow.swift; sourceTree = "<group>"; };
 		56DDDE401F9AA87600C715DC /* NSWindow+CenterFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+CenterFrame.swift"; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		56F2948B1F99301E000BC941 /* AssetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCell.swift; sourceTree = "<group>"; };
 		56F2948C1F99301E000BC941 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		56F2948D1F99301E000BC941 /* NavigationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHeader.swift; sourceTree = "<group>"; };
-		56F294901F993028000BC941 /* FavoriteAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAsset.swift; sourceTree = "<group>"; };
 		56F294911F993028000BC941 /* AssetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetType.swift; sourceTree = "<group>"; };
 		56F294921F993031000BC941 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		76A6124A5A593C434DA284C6 /* Pods-CDN FetchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDN FetchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDN FetchTests/Pods-CDN FetchTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 		56F2948F1F993028000BC941 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				56F294901F993028000BC941 /* FavoriteAsset.swift */,
 				56F294911F993028000BC941 /* AssetType.swift */,
+				56D0EA841F9AEDFF00762165 /* FavoriteAsset.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -556,10 +556,10 @@
 				567AA4671F993169006CBF92 /* String+Utils.swift in Sources */,
 				567AA46C1F993169006CBF92 /* main.swift in Sources */,
 				567AA4681F993169006CBF92 /* SettingsController.swift in Sources */,
-				567AA4611F993169006CBF92 /* FavoriteAsset.swift in Sources */,
 				56DDDE381F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift in Sources */,
 				56384C241F992D7A0009AF4F /* AppDelegate.swift in Sources */,
 				567AA4651F993169006CBF92 /* NavigationHeader.swift in Sources */,
+				56D0EA851F9AEDFF00762165 /* FavoriteAsset.swift in Sources */,
 				567AA4691F993169006CBF92 /* FavoritesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
