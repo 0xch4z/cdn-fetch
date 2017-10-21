@@ -10,12 +10,28 @@ import Foundation
 import CKNavigation
 import Cocoa
 
-class FavoritesCotnroller: CKNavigatableViewController {
+class FavoritesController: CKNavigatableViewController {
     
     override func loadView() {
         self.view = NSView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
+    
+    
+    func setupView() {
+        self.view.translatesAutoresizingMaskIntoConstraints = false
+        self.view.widthAnchor.constraint(equalToConstant: 350).isActive = true
+        self.view.heightAnchor.constraint(equalToConstant: 500).isActive = true
         self.view.wantsLayer = true
-        self.view.layer!.backgroundColor = CGColor.black
+    }
+    
+    
+    @objc func goBack(_ sender: Any?) {
+        self.navigationController?.popViewController()
     }
     
 }

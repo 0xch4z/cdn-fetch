@@ -247,17 +247,14 @@ extension MainController {
     
     
     @objc func launchSettings(_ sender: Any?) {
-        print("todo: launch settings")
         if let delegate = NSApplication.shared.delegate as? AppDelegate {
             delegate.launchSettings()
-        } else {
-            print("could not get delegate")
         }
     }
     
     
     @objc func launchFavorites(_ sender: Any?) {
-        print("todo: launch favorites")
+        self.navigationController?.pushViewController(FavoritesController())
     }
     
     
