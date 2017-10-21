@@ -17,6 +17,10 @@ extension NSUserInterfaceItemIdentifier {
     
     static let assetRow = NSUserInterfaceItemIdentifier(rawValue: "AssetRow")
     
+    static let favoriteColumn = NSUserInterfaceItemIdentifier(rawValue: "FavoriteColumn")
+    
     static let resultRow = NSUserInterfaceItemIdentifier(rawValue: "ResultRow")
     
+    static let favoriteRow = NSUserInterfaceItemIdentifier(rawValue: "FavoriteRow")
+
 }
