@@ -44,8 +44,8 @@ class AssetsController: CKNavigatableViewController {
     }
     
     
-    let header: AssetsHeader = {
-        let header = AssetsHeader()
+    let header: NavigationHeader = {
+        let header = NavigationHeader()
         header.translatesAutoresizingMaskIntoConstraints = false
         return header
     }()
@@ -118,7 +118,7 @@ class AssetsController: CKNavigatableViewController {
     func setupHeader() {
         header.backButton.target = self
         header.backButton.action = #selector(goBack(_:))
-        header.nameLabel.stringValue = library ?? ""
+        header.headingLabel.stringValue = library ?? ""
         header.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         header.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         header.heightAnchor.constraint(equalToConstant: 50).isActive = true

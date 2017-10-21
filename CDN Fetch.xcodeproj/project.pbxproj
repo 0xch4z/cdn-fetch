@@ -16,8 +16,7 @@
 		567AA4621F993169006CBF92 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294911F993028000BC941 /* AssetType.swift */; };
 		567AA4631F993169006CBF92 /* AssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2948B1F99301E000BC941 /* AssetCell.swift */; };
 		567AA4641F993169006CBF92 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2948C1F99301E000BC941 /* ResultCell.swift */; };
-		567AA4651F993169006CBF92 /* AssetsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2948D1F99301E000BC941 /* AssetsHeader.swift */; };
-		567AA4661F993169006CBF92 /* BrowseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2948E1F99301E000BC941 /* BrowseHeader.swift */; };
+		567AA4651F993169006CBF92 /* NavigationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2948D1F99301E000BC941 /* NavigationHeader.swift */; };
 		567AA4671F993169006CBF92 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294891F993008000BC941 /* String+Utils.swift */; };
 		567AA4681F993169006CBF92 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294841F992FE2000BC941 /* SettingsController.swift */; };
 		567AA4691F993169006CBF92 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294851F992FE2000BC941 /* FavoritesController.swift */; };
@@ -78,8 +77,7 @@
 		56F294891F993008000BC941 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		56F2948B1F99301E000BC941 /* AssetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCell.swift; sourceTree = "<group>"; };
 		56F2948C1F99301E000BC941 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
-		56F2948D1F99301E000BC941 /* AssetsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsHeader.swift; sourceTree = "<group>"; };
-		56F2948E1F99301E000BC941 /* BrowseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseHeader.swift; sourceTree = "<group>"; };
+		56F2948D1F99301E000BC941 /* NavigationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHeader.swift; sourceTree = "<group>"; };
 		56F294901F993028000BC941 /* FavoriteAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAsset.swift; sourceTree = "<group>"; };
 		56F294911F993028000BC941 /* AssetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetType.swift; sourceTree = "<group>"; };
 		56F294921F993031000BC941 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -209,8 +207,7 @@
 			children = (
 				56F2948B1F99301E000BC941 /* AssetCell.swift */,
 				56F2948C1F99301E000BC941 /* ResultCell.swift */,
-				56F2948D1F99301E000BC941 /* AssetsHeader.swift */,
-				56F2948E1F99301E000BC941 /* BrowseHeader.swift */,
+				56F2948D1F99301E000BC941 /* NavigationHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -548,7 +545,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				567AA4661F993169006CBF92 /* BrowseHeader.swift in Sources */,
 				567AA4621F993169006CBF92 /* AssetType.swift in Sources */,
 				56384C271F992D7A0009AF4F /* CDN_Fetch.xcdatamodeld in Sources */,
 				567AA4641F993169006CBF92 /* ResultCell.swift in Sources */,
@@ -563,7 +559,7 @@
 				567AA4611F993169006CBF92 /* FavoriteAsset.swift in Sources */,
 				56DDDE381F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift in Sources */,
 				56384C241F992D7A0009AF4F /* AppDelegate.swift in Sources */,
-				567AA4651F993169006CBF92 /* AssetsHeader.swift in Sources */,
+				567AA4651F993169006CBF92 /* NavigationHeader.swift in Sources */,
 				567AA4691F993169006CBF92 /* FavoritesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

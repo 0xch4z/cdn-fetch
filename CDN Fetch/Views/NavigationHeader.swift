@@ -1,5 +1,5 @@
 //
-//  AssetsHeader.swift
+//  NavigationHeader.swift
 //  CDN Fetch
 //
 //  Created by Charles Kenney on 10/19/17.
@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class AssetsHeader: NSView {
+class NavigationHeader: NSView {
     
     let backButton: NSButton = {
         let btn = NSButton(image: #imageLiteral(resourceName: "BackButton"), target: nil, action: nil)
@@ -19,7 +19,7 @@ class AssetsHeader: NSView {
     }()
     
     
-    let nameLabel: NSTextField = {
+    let headingLabel: NSTextField = {
         let label = NSTextField()
         label.alignment = .center
         label.isBezeled = false
@@ -35,7 +35,7 @@ class AssetsHeader: NSView {
         setupView()
         addViews()
         setupBackButton()
-        setupNameLabel()
+        setupHeadingLabel()
     }
     
     
@@ -47,7 +47,7 @@ class AssetsHeader: NSView {
     
     func addViews() {
         self.addSubview(backButton)
-        self.addSubview(nameLabel)
+        self.addSubview(headingLabel)
     }
     
     
@@ -61,12 +61,14 @@ class AssetsHeader: NSView {
     
     
     // Add name label constraints
-    func setupNameLabel() {
-        nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 55).isActive = true
-        nameLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -55).isActive = true
+    func setupHeadingLabel() {
+        headingLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        headingLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        headingLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 55).isActive = true
+        headingLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -55).isActive = true
     }
     
     
 }
+
+
