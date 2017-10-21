@@ -11,10 +11,14 @@ import CKNavigation
 
 class AppDelegate: NSObject, NSApplicationDelegate, NSPopoverDelegate {
 
+    
     var navigationController: CKNavigationController!
     
-    
     let mainController = MainController()
+    
+    let settingsController = SettingsController()
+    
+    lazy var settingsWindow = SettingsWindow()
     
     
     let statusItem: NSStatusItem = {
@@ -28,24 +32,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSPopoverDelegate {
     
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        popover.appearance = NSAppearance.init(named: .vibrantDark)
-        popover.delegate = self
-        navigationController = CKNavigationController(rootViewController: mainController)
-        popover.contentViewController = navigationController
-        popover.contentSize = NSSize(width: 350, height: 500)
-        popover.setAccessibilityFrontmost(true)
-        statusItem.action = #selector(togglePopover(_:))
+        setupPopover()
+        setupSettings()
     }
     
-    
-    @objc func togglePopover(_ sender: Any?) {
-        if (popover.isShown) {
-            popover.close()
-        } else {
-            statusItem.button!.highlight(true)
-            popover.show(relativeTo: NSZeroRect, of: statusItem.button!, preferredEdge: NSRectEdge.minY)
-        }
-    }
     
     
     // MARK: - Core Data stack
@@ -125,6 +115,67 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSPopoverDelegate {
         }
         return .terminateNow
     }
+    
+}
+
+
+
+// MARK: - Setup
+extension AppDelegate {
+    
+    
+    func setupPopover() {
+        popover.appearance = NSAppearance.init(named: .vibrantDark)
+        popover.delegate = self
+        navigationController = CKNavigationController(rootViewController: mainController)
+        popover.contentViewController = navigationController
+        popover.contentSize = NSSize(width: 350, height: 500)
+        popover.setAccessibilityFrontmost(true)
+        statusItem.action = #selector(togglePopover(_:))
+    }
+    
+    func setupSettings() {
+        settingsWindow.isOpaque = false
+        settingsWindow.contentView = settingsController.view
+    }
+    
+    
+}
+
+
+
+// MARK: - Actions
+extension AppDelegate {
+    
+    
+    func launchSettings() {
+        settingsWindow.makeKeyAndOrderFront(nil)
+    }
+    
+    
+    @objc func togglePopover(_ sender: Any?) {
+        if (popover.isShown) {
+            popover.close()
+        } else {
+            statusItem.button!.highlight(true)
+            popover.show(relativeTo: NSZeroRect, of: statusItem.button!, preferredEdge: NSRectEdge.minY)
+        }
+    }
+
+    
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        print("it worked")
+        if let window = sender.windows.first {
+            if flag {
+                window.orderFront(nil)
+            } else {
+                window.makeKeyAndOrderFront(nil)
+            }
+        }
+        return true
+    }
+    
+    
     
 }
 
