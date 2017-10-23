@@ -217,6 +217,7 @@ extension AssetsController: NSTableViewDelegate, NSTableViewDataSource {
         cell.assetName = currAsset
         cell.library = library ?? ""
         cell.version = version ?? ""
+        cell.fetchButton.tag = row
         return cell
     }
     

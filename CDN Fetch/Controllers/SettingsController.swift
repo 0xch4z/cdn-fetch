@@ -141,12 +141,11 @@ extension SettingsController {
     @objc func changeLaunchOnStartup(_ sender: NSButton) {
         let state = sender.state.rawValue == 1 ? true : false
         let defaults = UserDefaults.standard
-        // get helper bundle path
-        let helperId = "com.charleskenney.CDN-Fetch-Helper" as CFString
-        if SMLoginItemSetEnabled(helperId, true) {
-            print("Successfully set login item preference")
+        // try to set login item preference
+        if (state) {
+            LoginItemUtility.addToLoginItems()
         } else {
-            print("Could not set login item preference")
+            LoginItemUtility.deleteFromLoginItems()
         }
         defaults.setValue(state, forKey: launchOnStartupKey)
     }

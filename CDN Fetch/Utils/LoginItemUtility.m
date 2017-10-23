@@ -10,6 +10,13 @@
 
 @implementation LoginItemUtility
 
+/**
+ * Use LSSharedFileListRef is depreciated in favor of the
+ * System Management framework, however LSSharedFileRef allows
+ * the user to manage the login item in settings, without the
+ * app. This is most preferable as it is more accessable to the user.
+ */
+
 // adds to shared login items
 + (void)addToLoginItems {
     LSSharedFileListRef list = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);

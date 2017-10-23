@@ -23,6 +23,7 @@
 		567AA46B1F993169006CBF92 /* AssetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294871F992FE2000BC941 /* AssetsController.swift */; };
 		567AA46C1F993169006CBF92 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294921F993031000BC941 /* main.swift */; };
 		567AA46D1F9933DD006CBF92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F294811F992FC7000BC941 /* Assets.xcassets */; };
+		56A7AAE21F9DB83800350611 /* LoginItemUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7AAE11F9DB83800350611 /* LoginItemUtility.m */; };
 		56BB2A251F9A6654004A33E0 /* AssetTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB2A241F9A6654004A33E0 /* AssetTypeTests.swift */; };
 		56D0EA851F9AEDFF00762165 /* FavoriteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0EA841F9AEDFF00762165 /* FavoriteAsset.swift */; };
 		56DDDE381F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DDDE371F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift */; };
@@ -49,6 +50,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		567EA9261F9D3E81004852CA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56ED0BA11F9D41AA00A02C33 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		098AB9AE557671A52A7A1E38 /* Pods-CDN FetchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDN FetchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDN FetchUITests/Pods-CDN FetchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0D6BCCF6733B35F231253C28 /* Pods-CDN Fetch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDN Fetch.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDN Fetch/Pods-CDN Fetch.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +88,10 @@
 		56384C3E1F992D7B0009AF4F /* CDN FetchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CDN FetchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56384C421F992D7B0009AF4F /* CDN_FetchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDN_FetchUITests.swift; sourceTree = "<group>"; };
 		56384C441F992D7B0009AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		567EA9161F9D3E81004852CA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		56A7AAE01F9DB83800350611 /* CDN Fetch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CDN Fetch-Bridging-Header.h"; sourceTree = "<group>"; };
+		56A7AAE11F9DB83800350611 /* LoginItemUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginItemUtility.m; sourceTree = "<group>"; };
+		56A7AAE31F9DB84D00350611 /* LoginItemUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginItemUtility.h; sourceTree = "<group>"; };
 		56BB2A241F9A6654004A33E0 /* AssetTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTypeTests.swift; sourceTree = "<group>"; };
 		56D0EA841F9AEDFF00762165 /* FavoriteAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAsset.swift; sourceTree = "<group>"; };
 		56DDDE371F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUserInterfaceItem+Identifiers.swift"; sourceTree = "<group>"; };
@@ -140,6 +167,7 @@
 		56384C221F992D7A0009AF4F /* CDN Fetch */ = {
 			isa = PBXGroup;
 			children = (
+				56A7AADF1F9DB80000350611 /* Utils */,
 				56DDDE3D1F9AA4EE00C715DC /* Windows */,
 				56F2948F1F993028000BC941 /* Models */,
 				56F2948A1F99301E000BC941 /* Views */,
@@ -171,6 +199,16 @@
 				56384C441F992D7B0009AF4F /* Info.plist */,
 			);
 			path = "CDN FetchUITests";
+			sourceTree = "<group>";
+		};
+		56A7AADF1F9DB80000350611 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				56A7AAE11F9DB83800350611 /* LoginItemUtility.m */,
+				56A7AAE01F9DB83800350611 /* CDN Fetch-Bridging-Header.h */,
+				56A7AAE31F9DB84D00350611 /* LoginItemUtility.h */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		56DDDE3D1F9AA4EE00C715DC /* Windows */ = {
@@ -227,6 +265,7 @@
 				7A487CA7885815CB2FE610B3 /* Pods_CDN_Fetch.framework */,
 				141099A1466ABD4A620157D8 /* Pods_CDN_FetchTests.framework */,
 				CD57D502F4473A06E3F295DF /* Pods_CDN_FetchUITests.framework */,
+				567EA9161F9D3E81004852CA /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -257,6 +296,8 @@
 				56384C1E1F992D7A0009AF4F /* Resources */,
 				03E1D4BC3C2EEC2E97310E4A /* [CP] Embed Pods Frameworks */,
 				5835A87D1682AA1D85370349 /* [CP] Copy Pods Resources */,
+				567EA9261F9D3E81004852CA /* Embed App Extensions */,
+				56ED0BA11F9D41AA00A02C33 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -321,6 +362,7 @@
 				TargetAttributes = {
 					56384C1F1F992D7A0009AF4F = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -556,6 +598,7 @@
 				567AA4671F993169006CBF92 /* String+Utils.swift in Sources */,
 				567AA46C1F993169006CBF92 /* main.swift in Sources */,
 				567AA4681F993169006CBF92 /* SettingsController.swift in Sources */,
+				56A7AAE21F9DB83800350611 /* LoginItemUtility.m in Sources */,
 				56DDDE381F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift in Sources */,
 				56384C241F992D7A0009AF4F /* AppDelegate.swift in Sources */,
 				567AA4651F993169006CBF92 /* NavigationHeader.swift in Sources */,
@@ -707,6 +750,7 @@
 			baseConfigurationReference = B10A1284EEB179CC485FC979 /* Pods-CDN Fetch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "CDN Fetch/CDN_Fetch.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -718,6 +762,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-Fetch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "CDN Fetch/Utils/CDN Fetch-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -727,6 +774,7 @@
 			baseConfigurationReference = 0D6BCCF6733B35F231253C28 /* Pods-CDN Fetch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "CDN Fetch/CDN_Fetch.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -738,6 +786,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charleskenney.CDN-Fetch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "CDN Fetch/Utils/CDN Fetch-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

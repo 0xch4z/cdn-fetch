@@ -129,6 +129,7 @@ extension FavoritesController: NSTableViewDelegate, NSTableViewDataSource {
         cell.assetName = item.name ?? ""
         cell.library = item.library ?? ""
         cell.version = item.version ?? ""
+        cell.fetchButton.tag = row
         return cell
     }
     

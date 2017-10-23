@@ -37,7 +37,7 @@ class AssetCell: NSTableCellView {
             setupFileImage()
         }
     }
-    
+        
     
     private var assetUri: String {
         let base = "https://cdnjs.cloudflare.com/ajax/libs"
@@ -147,6 +147,7 @@ class AssetCell: NSTableCellView {
         // create uri item
         let uriItem = NSMenuItem(title: "get URI", action: #selector(copyUri(_:)), keyEquivalent: "")
         uriItem.target = self
+        uriItem.tag = fetchButton.tag
         fetchMenu.addItem(uriItem)
         // create favorite item
         let favoriteItem = NSMenuItem(title: "add favorite", action: #selector(addToFavorites(_:)), keyEquivalent: "")
@@ -204,6 +205,10 @@ extension AssetCell: NSMenuDelegate {
         let pasteboard = NSPasteboard.general
         pasteboard.declareTypes([.string], owner: self)
         pasteboard.setString(assetUri, forType: .string)
+        // test (ref for deleting favorites)
+        if let button = sender as? NSMenuItem {
+            print(button.tag)
+        }
     }
     
     
@@ -218,7 +223,7 @@ extension AssetCell: NSMenuDelegate {
         // save new favorite entry
         let newAsset = NSEntityDescription.insertNewObject(forEntityName: "FavoriteAsset", into: context) as! FavoriteAsset
         newAsset.name = assetName ?? ""
-//        newAsset.type = assetType
+        newAsset.type = assetType
         newAsset.library = library
         newAsset.version = version
         newAsset.uri = assetUri
