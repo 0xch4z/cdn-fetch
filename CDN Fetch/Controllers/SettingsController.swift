@@ -8,9 +8,12 @@
 
 import Foundation
 import Cocoa
-import CKNavigation
+import ServiceManagement
 
-class SettingsController: CKNavigatableViewController {
+class SettingsController: NSViewController {
+    
+    
+    let launchOnStartupKey = "LAUNCH_ON_STARTUP"
     
     
     let logo: NSImageView = {
@@ -43,7 +46,6 @@ class SettingsController: CKNavigatableViewController {
     
     let launchOnStartupButton: NSButton = {
         let button = NSButton(checkboxWithTitle: "launch on startup", target: nil, action: nil)
-        button.state = .on
         button.alignment = .center
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -62,6 +64,13 @@ class SettingsController: CKNavigatableViewController {
         setupCopyrightLabel()
         setupViewSourceButton()
         setupLaunchOnStartupButton()
+    }
+    
+    
+    func getInitialLaunchState() -> Bool {
+        let defaults = UserDefaults.standard
+        let launchOnStartupState = defaults.value(forKey: launchOnStartupKey) as? Bool ?? false
+        return launchOnStartupState
     }
     
     
@@ -104,6 +113,7 @@ class SettingsController: CKNavigatableViewController {
     
     
     func setupLaunchOnStartupButton() {
+        launchOnStartupButton.state = getInitialLaunchState() ? .on : .off
         launchOnStartupButton.target = self
         launchOnStartupButton.action = #selector(changeLaunchOnStartup(_:))
         launchOnStartupButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
@@ -129,9 +139,16 @@ extension SettingsController {
     
     
     @objc func changeLaunchOnStartup(_ sender: NSButton) {
-    
-        print("changed launch on startup to \(sender.state)")
+        let state = sender.state.rawValue == 1 ? true : false
+        let defaults = UserDefaults.standard
+        // get helper bundle path
+        let helperId = "com.charleskenney.CDN-Fetch-Helper" as CFString
+        if SMLoginItemSetEnabled(helperId, true) {
+            print("Successfully set login item preference")
+        } else {
+            print("Could not set login item preference")
+        }
+        defaults.setValue(state, forKey: launchOnStartupKey)
     }
-    
     
 }

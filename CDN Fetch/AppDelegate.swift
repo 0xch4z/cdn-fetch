@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSPopoverDelegate {
     
     let statusItem: NSStatusItem = {
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        item.title = "Fetch"
+        item.image = #imageLiteral(resourceName: "StatusIcon")
         return item
     }()
     
