@@ -12,6 +12,16 @@ import Cocoa
 class FavoriteCell: NSTableCellView {
     
     
+    
+    var asset: FavoriteAsset? {
+        didSet {
+            self.assetName = asset?.name ?? ""
+            self.library = asset?.library ?? ""
+            self.version = asset?.version ?? ""
+        }
+    }
+    
+    
     var assetName: String? {
         didSet {
             if let text = assetName {
@@ -52,7 +62,7 @@ class FavoriteCell: NSTableCellView {
         label.isBezeled = false
         label.isEditable = false
         label.isBordered = false
-        label.font = NSFont(name: "Helvetica Neue", size: 15)
+        label.font = NSFont(name: "Helvetica Neue Thin", size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -179,7 +189,7 @@ class FavoriteCell: NSTableCellView {
     
     func setupLibraryLabel() {
         libraryLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 4.125).isActive = true
-        libraryLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        libraryLabel.heightAnchor.constraint(equalToConstant: 22.5).isActive = true
         libraryLabel.leftAnchor.constraint(equalTo: fileImageView.rightAnchor, constant: 5).isActive = true
         libraryLabel.rightAnchor.constraint(equalTo: fetchButton.leftAnchor, constant: 5).isActive = true
     }
@@ -251,9 +261,25 @@ extension FavoriteCell: NSMenuDelegate {
     
     
     @objc func removeFromFavorites(_ sender: NSMenuItem) {
-        let index = sender.tag
-        print("index \(index) should be deleted!")
-        // dispatch notification to delete self
+        // get context and item
+        guard let delegate = NSApplication.shared.delegate as? AppDelegate else {
+            print("could not get delegate")
+            return
+        }
+        
+        guard let item = asset else {
+            print("could not get asset")
+            return
+        }
+        
+        let context = delegate.persistentContainer.viewContext
+
+        // delete item
+        context.delete(item)
+        
+        // save context and dispatch change
+        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
+        NotificationCenter.default.post(name: .ItemsDidUpdate, object: nil)
     }
     
 }

@@ -24,6 +24,7 @@
 		567AA46C1F993169006CBF92 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F294921F993031000BC941 /* main.swift */; };
 		567AA46D1F9933DD006CBF92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F294811F992FC7000BC941 /* Assets.xcassets */; };
 		56A772121F9E46F6008C8AE4 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A772111F9E46F6008C8AE4 /* FavoriteCell.swift */; };
+		56A772141F9E5471008C8AE4 /* Notification+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A772131F9E5471008C8AE4 /* Notification+Names.swift */; };
 		56A7AAE21F9DB83800350611 /* LoginItemUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7AAE11F9DB83800350611 /* LoginItemUtility.m */; };
 		56BB2A251F9A6654004A33E0 /* AssetTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB2A241F9A6654004A33E0 /* AssetTypeTests.swift */; };
 		56D0EA851F9AEDFF00762165 /* FavoriteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0EA841F9AEDFF00762165 /* FavoriteAsset.swift */; };
@@ -91,6 +92,7 @@
 		56384C441F992D7B0009AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567EA9161F9D3E81004852CA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		56A772111F9E46F6008C8AE4 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		56A772131F9E5471008C8AE4 /* Notification+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Names.swift"; sourceTree = "<group>"; };
 		56A7AAE01F9DB83800350611 /* CDN Fetch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CDN Fetch-Bridging-Header.h"; sourceTree = "<group>"; };
 		56A7AAE11F9DB83800350611 /* LoginItemUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginItemUtility.m; sourceTree = "<group>"; };
 		56A7AAE31F9DB84D00350611 /* LoginItemUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginItemUtility.h; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				56F294891F993008000BC941 /* String+Utils.swift */,
 				56DDDE371F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift */,
 				56DDDE401F9AA87600C715DC /* NSWindow+CenterFrame.swift */,
+				56A772131F9E5471008C8AE4 /* Notification+Names.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				56384C241F992D7A0009AF4F /* AppDelegate.swift in Sources */,
 				567AA4651F993169006CBF92 /* NavigationHeader.swift in Sources */,
 				56A772121F9E46F6008C8AE4 /* FavoriteCell.swift in Sources */,
+				56A772141F9E5471008C8AE4 /* Notification+Names.swift in Sources */,
 				56D0EA851F9AEDFF00762165 /* FavoriteAsset.swift in Sources */,
 				567AA4691F993169006CBF92 /* FavoritesController.swift in Sources */,
 			);

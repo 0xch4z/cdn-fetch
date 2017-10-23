@@ -67,6 +67,7 @@ class FavoritesController: CKNavigatableViewController {
         setupHeader()
         setupFavoritesTable()
         fetchFavorites()
+        observeAssetChanges()
     }
     
     
@@ -107,6 +108,11 @@ class FavoritesController: CKNavigatableViewController {
     }
     
     
+    func observeAssetChanges() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData(_:)), name: .ItemsDidUpdate, object: nil)
+    }
+    
+    
 }
 
 
@@ -126,10 +132,7 @@ extension FavoritesController: NSTableViewDelegate, NSTableViewDataSource {
         // create cell
         let cell = FavoriteCell()
         cell.identifier = .assetRow
-        cell.assetName = item.name ?? ""
-        cell.library = item.library ?? ""
-        cell.version = item.version ?? ""
-        cell.fetchButton.tag = row
+        cell.asset = item
         return cell
     }
     
@@ -168,6 +171,11 @@ extension FavoritesController {
     
     @objc func goBack(_ sender: Any?) {
         self.navigationController?.popViewController()
+    }
+    
+    
+    @objc func reloadData(_ sender: Any?) {
+        fetchFavorites()
     }
     
 }
