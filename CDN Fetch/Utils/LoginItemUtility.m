@@ -8,6 +8,8 @@
 
 #import "LoginItemUtility.h"
 
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 @implementation LoginItemUtility
 
 /**

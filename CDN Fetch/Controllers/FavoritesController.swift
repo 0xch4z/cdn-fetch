@@ -39,7 +39,7 @@ class FavoritesController: CKNavigatableViewController {
     
     let favoritesTable: NSTableView = {
         let table = NSTableView()
-        table.rowHeight = 40
+        table.rowHeight = 50
         table.wantsLayer = false
         table.headerView = nil
         table.backgroundColor = .clear
@@ -124,7 +124,7 @@ extension FavoritesController: NSTableViewDelegate, NSTableViewDataSource {
         // get favorite item
         let item = favorites[row]
         // create cell
-        let cell = AssetCell()
+        let cell = FavoriteCell()
         cell.identifier = .assetRow
         cell.assetName = item.name ?? ""
         cell.library = item.library ?? ""
