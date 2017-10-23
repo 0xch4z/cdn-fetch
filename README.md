@@ -21,7 +21,7 @@
   A mac status bar app to make fetching assets quick and simple.
 </p>
 <p align="center">
-  <a href="https://github.com/Charliekenney23/cdn-fetch/releases/download/v0.1.0/CDN%20Fetch.app">
+  <a target="_blank" href="https://github.com/Charliekenney23/cdn-fetch/releases/download/v0.1.0/CDN.Fetch.app.zip">
     <img src="Assets/download.png" alt="download">
   </a>
 </p>
