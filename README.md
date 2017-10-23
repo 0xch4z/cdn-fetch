@@ -17,7 +17,34 @@
   </a>
 </p>
 
-<h2>License</h2>
+<p align="center">
+  A mac status bar app to make fetching assets quick and simple.
+</p>
+<hr>
+
+<h3 align="center">Fetching assets 📚</h3>
+<p align="center">
+  <img src="Assets/fetch-demo-final.gif">
+</p>
+<p align="center">Easily search for and link assets from your status bar. You don't even have to leave your text editor!</p>
+
+<br>
+
+<h3 align="center">Pick your favorites ❤️</h3>
+<p align="center">
+  <img src="Assets/favorite-demo-final.gif">
+</p>
+<p align="center">Add your go-to assets to your favorites, and you don't even have to search for them.</p>
+
+<br>
+
+<h3 align="center">Launch on startup 🚀</h3>
+<p align="center">
+  <img src="Assets/startup-demo-final.gif">
+</p>
+<p align="center">CDN Fetch is very low profile, which makes it very suitable for launching on startup.</p>
+
+<h2>License 📜</h2>
 <p>
   &copy; 2017 <a href="https://github.com/charliekenney23">Charles Kenney</a>
 </p>
