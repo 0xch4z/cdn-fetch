@@ -13,18 +13,23 @@
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license-status">
   </a>
   <a href="https://github.com/Charliekenney23/cdn-fetch/releases">
-    <img src="https://img.shields.io/badge/latest-0%2E0%2E0-green.svg">
+    <img src="https://img.shields.io/badge/latest-0%2E1%2E0-green.svg">
   </a>
 </p>
 
 <p align="center">
   A mac status bar app to make fetching assets quick and simple.
 </p>
+<p align="center">
+  <a href="https://github.com/Charliekenney23/cdn-fetch/releases/download/v0.1.0/CDN%20Fetch.app">
+    <img src="Assets/download.png" alt="download">
+  </a>
+</p>
 <hr>
 
 <h3 align="center">Fetching assets 📚</h3>
 <p align="center">
-  <img src="Assets/fetch-demo-final.gif">
+  <img src="Assets/fetch-demo-final.gif" alt="fetch demo">
 </p>
 <p align="center">Easily search for and link assets from your status bar. You don't even have to leave your text editor!</p>
 
@@ -32,7 +37,7 @@
 
 <h3 align="center">Pick your favorites ❤️</h3>
 <p align="center">
-  <img src="Assets/favorite-demo-final.gif">
+  <img src="Assets/favorite-demo-final.gif" alt="favorites demo">
 </p>
 <p align="center">Add your go-to assets to your favorites, and you don't even have to search for them.</p>
 
@@ -40,7 +45,7 @@
 
 <h3 align="center">Launch on startup 🚀</h3>
 <p align="center">
-  <img src="Assets/startup-demo-final.gif">
+  <img src="Assets/startup-demo-final.gif" alt="startup demo">
 </p>
 <p align="center">CDN Fetch is very low profile, which makes it very suitable for launching on startup.</p>
 
