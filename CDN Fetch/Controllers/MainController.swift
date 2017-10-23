@@ -78,6 +78,14 @@ class MainController: CKNavigatableViewController {
     }()
     
     
+    let powerButton: NSButton = {
+        let button = NSButton(image: #imageLiteral(resourceName: "Power"), target: nil, action: nil)
+        button.isBordered = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    
     override func loadView() {
         self.view = NSView()
     }
@@ -90,6 +98,7 @@ class MainController: CKNavigatableViewController {
         setupSearchField()
         setupFavoritesButton()
         setupSettingsButton()
+        setupPowerButton()
         setupResultsTable()
         searchLibraries(for: "")
     }
@@ -107,6 +116,7 @@ class MainController: CKNavigatableViewController {
         self.view.addSubview(searchField)
         self.view.addSubview(scrollView)
         self.view.addSubview(favoritesButton)
+        self.view.addSubview(powerButton)
         self.view.addSubview(settingsButton)
     }
     
@@ -118,7 +128,7 @@ class MainController: CKNavigatableViewController {
         searchField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 15).isActive = true
         searchField.heightAnchor.constraint(equalToConstant: 25).isActive = true
         searchField.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
-        searchField.widthAnchor.constraint(equalToConstant: 280).isActive = true
+        searchField.widthAnchor.constraint(equalToConstant: 259).isActive = true
     }
     
     
@@ -133,14 +143,24 @@ class MainController: CKNavigatableViewController {
     }
     
     
-    // setup settings button & constraints
     func setupSettingsButton() {
         settingsButton.target = self
         settingsButton.action = #selector(launchSettings(_:))
         settingsButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 15).isActive = true
-        settingsButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
+        settingsButton.leftAnchor.constraint(equalTo: favoritesButton.rightAnchor, constant: 5).isActive = true
         settingsButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         settingsButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+    }
+    
+    
+    // setup settings button & constraints
+    func setupPowerButton() {
+        powerButton.target = self
+        powerButton.action = #selector(quitApplication(_:))
+        powerButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16).isActive = true
+        powerButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
+        powerButton.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        powerButton.widthAnchor.constraint(equalToConstant: 18).isActive = true
     }
     
     
@@ -255,6 +275,11 @@ extension MainController {
     
     @objc func launchFavorites(_ sender: Any?) {
         self.navigationController?.pushViewController(FavoritesController())
+    }
+    
+    
+    @objc func quitApplication(_ sender: Any?) {
+        NSApplication.shared.terminate(nil)
     }
     
     
