@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license-status">
   </a>
   <a href="https://github.com/Charliekenney23/cdn-fetch/releases">
-    <img src="https://img.shields.io/badge/latest-0%2E1%2E0-green.svg">
+    <img src="https://img.shields.io/badge/latest-1%2E0%2E0-green.svg">
   </a>
 </p>
 
@@ -21,8 +21,8 @@
   A mac status bar app to make fetching assets quick and simple.
 </p>
 <p align="center">
-  <a target="_blank" href="https://github.com/Charliekenney23/cdn-fetch/releases/download/v0.1.0/CDN.Fetch.app.zip">
-    <img src="Assets/download.png" alt="download">
+  <a target="_blank" href="https://itunes.apple.com/us/app/cdn-fetch/id1300253317?mt=12">
+    <img src="/Assets/appstore.png" alt="Download in the appstore" width="250">
   </a>
 </p>
 <hr>

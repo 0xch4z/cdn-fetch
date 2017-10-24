@@ -29,7 +29,6 @@
 		56BB2A251F9A6654004A33E0 /* AssetTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB2A241F9A6654004A33E0 /* AssetTypeTests.swift */; };
 		56D0EA851F9AEDFF00762165 /* FavoriteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0EA841F9AEDFF00762165 /* FavoriteAsset.swift */; };
 		56DDDE381F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DDDE371F9A7F7400C715DC /* NSUserInterfaceItem+Identifiers.swift */; };
-		56DDDE391F9A823000C715DC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56384C2D1F992D7A0009AF4F /* Info.plist */; };
 		56DDDE3F1F9AA50200C715DC /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DDDE3E1F9AA50200C715DC /* SettingsWindow.swift */; };
 		56DDDE411F9AA87600C715DC /* NSWindow+CenterFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DDDE401F9AA87600C715DC /* NSWindow+CenterFrame.swift */; };
 		AA573FCF312BD5D1D6F8D92C /* Pods_CDN_Fetch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A487CA7885815CB2FE610B3 /* Pods_CDN_Fetch.framework */; };
@@ -413,7 +412,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56DDDE391F9A823000C715DC /* Info.plist in Resources */,
 				567AA46D1F9933DD006CBF92 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
