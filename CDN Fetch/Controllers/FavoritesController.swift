@@ -137,6 +137,11 @@ extension FavoritesController: NSTableViewDelegate, NSTableViewDataSource {
     }
     
     
+    func selectionShouldChange(in tableView: NSTableView) -> Bool {
+        return false
+    }
+    
+    
 }
 
 
