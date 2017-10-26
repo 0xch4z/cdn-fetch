@@ -22,7 +22,7 @@
 </p>
 <p align="center">
   <a target="_blank" href="https://itunes.apple.com/us/app/cdn-fetch/id1300253317?mt=12">
-    <img src="/Assets/appstore.png" alt="Download in the appstore" width="250">
+    <img src="Assets/appstore.png" alt="Download in the appstore" width="250">
   </a>
 </p>
 <hr>
