@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://travis-ci.org/Charliekenney23/cdn-fetch">
-    <img src="https://img.shields.io/travis/charliekenney23/cdn-fetch.svg" alt="travis-status">
+    <img alt="build status" src="https://travis-ci.org/Charliekenney23/cdn-fetch.svg?branch=master">
   </a>
   <a href="#swift4">
     <img src="https://img.shields.io/badge/swift-4-orange.svg" alt="swift-status">
