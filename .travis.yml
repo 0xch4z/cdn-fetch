@@ -3,10 +3,8 @@ osx_image: xcode9
 
 podfile: Podfile
 
-cache: bundler
-
 before_script:
   - pod update
 
 script:
-  - ./Bin/tests
+  - bash ./Bin/tests.sh
