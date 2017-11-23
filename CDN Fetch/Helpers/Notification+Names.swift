@@ -9,8 +9,8 @@
 import Foundation
 
 extension Notification.Name {
-    
+
     // MARK: - Application notification names
     static let ItemsDidUpdate = Notification.Name(rawValue: "ItemsDidUpdate")
-    
+
 }

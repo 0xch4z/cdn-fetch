@@ -10,16 +10,14 @@ import Foundation
 import Cocoa
 
 class SettingsWindow: NSWindow {
-    
-    
+
     convenience init() {
         let rect = NSRect(x: 0, y: 0, width: 350, height: 325)
         self.init(contentRect: rect, styleMask: .closable, backing: .buffered, defer: false)
         self.isReleasedWhenClosed = false
         setupWindow()
     }
-    
-    
+
     func setupWindow() {
         self.centerFrameToScreen()
         self.appearance = NSAppearance(named: .vibrantDark)
@@ -30,5 +28,5 @@ class SettingsWindow: NSWindow {
         self.titlebarAppearsTransparent = true
         self.title = "CDN Fetch Settings"
     }
-    
+
 }

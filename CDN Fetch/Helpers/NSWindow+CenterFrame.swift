@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 
 extension NSWindow {
-    
+
     public func centerFrameToScreen() {
         if let screenSize = screen?.frame.size {
             let centerX = (screenSize.width - self.frame.size.width) / 2
@@ -19,5 +19,5 @@ extension NSWindow {
             self.setFrameOrigin(center)
         }
     }
-    
+
 }

@@ -11,23 +11,20 @@ import CKNavigation
 import Cocoa
 
 class FavoritesController: CKNavigatableViewController {
-    
-    
+
     var favorites: [FavoriteAsset] = [] {
         didSet {
             favoritesTable.reloadData()
         }
     }
-    
-    
+
     let header: NavigationHeader = {
         let header = NavigationHeader()
         header.headingLabel.stringValue = "Favorites"
         header.translatesAutoresizingMaskIntoConstraints = false
         return header
     }()
-    
-    
+
     let scrollView: NSScrollView = {
         let scroll = NSScrollView()
         scroll.wantsLayer = false
@@ -35,8 +32,7 @@ class FavoritesController: CKNavigatableViewController {
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
-    
-    
+
     let favoritesTable: NSTableView = {
         let table = NSTableView()
         table.rowHeight = 50
@@ -46,20 +42,17 @@ class FavoritesController: CKNavigatableViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
-    
-    
+
     let column: NSTableColumn = {
         let col = NSTableColumn()
         col.identifier = .assetColumn
         return col
     }()
-    
-    
+
     override func loadView() {
         self.view = NSView()
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -69,22 +62,19 @@ class FavoritesController: CKNavigatableViewController {
         fetchFavorites()
         observeAssetChanges()
     }
-    
-    
+
     func setupView() {
         self.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.widthAnchor.constraint(equalToConstant: 350).isActive = true
         self.view.heightAnchor.constraint(equalToConstant: 500).isActive = true
         self.view.wantsLayer = true
     }
-    
-    
+
     func addViews() {
         self.view.addSubview(header)
         self.view.addSubview(scrollView)
     }
-    
-    
+
     func setupHeader() {
         header.backButton.target = self
         header.backButton.action = #selector(goBack(_:))
@@ -92,8 +82,7 @@ class FavoritesController: CKNavigatableViewController {
         header.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         header.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
-    
-    
+
     // MARK: - Setup table and add constraints
     func setupFavoritesTable() {
         favoritesTable.addTableColumn(column)
@@ -106,26 +95,22 @@ class FavoritesController: CKNavigatableViewController {
         scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
-    
-    
+
     func observeAssetChanges() {
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData(_:)), name: .ItemsDidUpdate, object: nil)
+        NotificationCenter.default.addObserver(self,
+           selector: #selector(reloadData(_:)),
+           name: .ItemsDidUpdate, object: nil)
     }
-    
-    
+
 }
-
-
 
 // MARK: - Table View
 extension FavoritesController: NSTableViewDelegate, NSTableViewDataSource {
-    
-    
+
     func numberOfRows(in tableView: NSTableView) -> Int {
         return favorites.count
     }
-    
-    
+
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         // get favorite item
         let item = favorites[row]
@@ -135,52 +120,42 @@ extension FavoritesController: NSTableViewDelegate, NSTableViewDataSource {
         cell.asset = item
         return cell
     }
-    
-    
+
     func selectionShouldChange(in tableView: NSTableView) -> Bool {
         return false
     }
-    
-    
+
 }
-
-
 
 // MARK: - Core Data calls
 extension FavoritesController {
-    
 
     func fetchFavorites() {
         guard let delegate = NSApplication.shared.delegate as? AppDelegate else {
             print("could not get delegate")
             return
         }
-        
+
         let context = delegate.persistentContainer.viewContext
-        
+
         do {
             favorites = try context.fetch(FavoriteAsset.fetchRequest())
         } catch let error {
             print("error getting favorites: \(error)")
         }
     }
-    
-    
+
 }
-
-
 
 // MARK: - Actions
 extension FavoritesController {
-    
-    
+
     @objc func goBack(_ sender: Any?) {
         self.navigationController?.popViewController()
     }
-    
-    
+
     @objc func reloadData(_ sender: Any?) {
         fetchFavorites()
     }
-    
+
 }

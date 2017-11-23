@@ -10,13 +10,11 @@ import Foundation
 import Regex
 
 extension String {
-    
-    
+
     public func getFileExtension() -> String {
         let exp = Regex("\\..*$")
         let match = exp.firstMatch(in: self)
         return match?.matchedString ?? ""
     }
-    
-    
+
 }

@@ -10,15 +10,14 @@ import Foundation
 import Cocoa
 
 class NavigationHeader: NSView {
-    
+
     let backButton: NSButton = {
         let btn = NSButton(image: #imageLiteral(resourceName: "BackButton"), target: nil, action: nil)
         btn.isBordered = false
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
-    
-    
+
     let headingLabel: NSTextField = {
         let label = NSTextField()
         label.alignment = .center
@@ -29,7 +28,7 @@ class NavigationHeader: NSView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         setupView()
@@ -37,20 +36,17 @@ class NavigationHeader: NSView {
         setupBackButton()
         setupHeadingLabel()
     }
-    
-    
+
     func setupView() {
         self.wantsLayer = true
         self.layer!.backgroundColor = .clear
     }
-    
-    
+
     func addViews() {
         self.addSubview(backButton)
         self.addSubview(headingLabel)
     }
-    
-    
+
     // Add back button constraints
     func setupBackButton() {
         backButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
@@ -58,8 +54,7 @@ class NavigationHeader: NSView {
         backButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         backButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
     }
-    
-    
+
     // Add name label constraints
     func setupHeadingLabel() {
         headingLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
@@ -67,8 +62,5 @@ class NavigationHeader: NSView {
         headingLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 55).isActive = true
         headingLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -55).isActive = true
     }
-    
-    
+
 }
-
-

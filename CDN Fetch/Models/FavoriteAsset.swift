@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class FavoriteAsset: NSManagedObject {
-    
+
 //    return AssetType(rawValue: self.typeState)
 
     var type: AssetType? {
@@ -23,21 +23,19 @@ class FavoriteAsset: NSManagedObject {
             }
         }
     }
-    
+
 }
 
-
 extension FavoriteAsset {
-    
+
     @nonobjc public class func fetchRequest() -> NSFetchRequest<FavoriteAsset> {
         return NSFetchRequest<FavoriteAsset>(entityName: "FavoriteAsset")
     }
-    
+
     @NSManaged public var library: String?
     @NSManaged public var name: String?
     @NSManaged public var typeState: Int16
     @NSManaged public var uri: String?
     @NSManaged public var version: String?
-    
-}
 
+}

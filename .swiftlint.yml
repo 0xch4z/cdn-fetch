@@ -1,0 +1,4 @@
+excluded:
+  - Pods
+  - CDN FetchUITests
+  - CDN FetchTests 

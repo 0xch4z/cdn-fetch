@@ -11,46 +11,38 @@ import Cocoa
 import CKNavigation
 import Alamofire
 
-
 class AssetsController: CKNavigatableViewController {
-    
-    
+
     var library: String? {
         didSet {
             assetsTable.reloadData()
         }
     }
-    
-    
+
     var version: String? {
         didSet {
             assetsTable.reloadData()
         }
     }
-    
-    
+
     var versions: [String]? {
         didSet {
-            // TODO: add to versions menu
             print("got versions")
         }
     }
-    
-    
-    var assets: Dictionary<String, Any?>? {
+
+    var assets: [String: Any?]? {
         didSet {
             assetsTable.reloadData()
         }
     }
-    
-    
+
     let header: NavigationHeader = {
         let header = NavigationHeader()
         header.translatesAutoresizingMaskIntoConstraints = false
         return header
     }()
-    
-    
+
     let scrollView: NSScrollView = {
         let scroll = NSScrollView()
         scroll.wantsLayer = false
@@ -58,8 +50,7 @@ class AssetsController: CKNavigatableViewController {
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
-    
-    
+
     let assetsTable: NSTableView = {
         let table = NSTableView()
         table.rowHeight = 40
@@ -69,27 +60,23 @@ class AssetsController: CKNavigatableViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
-    
-    
+
     let column: NSTableColumn = {
         let col = NSTableColumn()
         col.identifier = .assetColumn
         return col
     }()
-    
-    
+
     convenience init(library: String) {
         self.init(nibName: nil, bundle: nil)
         self.library = library
         fetchAssets(for: library)
     }
-    
-    
+
     override func loadView() {
         self.view = NSView()
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -97,23 +84,20 @@ class AssetsController: CKNavigatableViewController {
         setupHeader()
         setupAssetsTable()
     }
-    
-    
+
     func setupView() {
         self.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.widthAnchor.constraint(equalToConstant: 350).isActive = true
         self.view.heightAnchor.constraint(equalToConstant: 500).isActive = true
         self.view.wantsLayer = true
     }
-    
-    
+
     // MARK: - Add subviews
     func addViews() {
         self.view.addSubview(scrollView)
         self.view.addSubview(header)
     }
-    
-    
+
     // MARK: - Setup header and add constraints
     func setupHeader() {
         header.backButton.target = self
@@ -123,8 +107,7 @@ class AssetsController: CKNavigatableViewController {
         header.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         header.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
-    
-    
+
     // MARK: - Setup table and add constraints
     func setupAssetsTable() {
         assetsTable.addTableColumn(column)
@@ -137,32 +120,28 @@ class AssetsController: CKNavigatableViewController {
         scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
-    
-    
+
 }
-
-
 
 // MARK: - Networking Tasks
 extension AssetsController {
-    
-    
+
     // Fetch assets for the current library
     func fetchAssets(for library: String) {
         // make request
         Alamofire.request("https://api.cdnjs.com/libraries/\(library)").responseJSON { res in
-            
-            guard let data = res.result.value as? [String:Any?] else {
+
+            guard let data = res.result.value as? [String: Any?] else {
                 return print("no data")
             }
-            
-            guard let assetsData = data["assets"] as? Array<Dictionary<String, Any?>> else {
+
+            guard let assetsData = data["assets"] as? [[String: Any?]] else {
                 return print("no assets")
             }
-            
+
             var versions: [String] = []
-            var assets: [String:Any?] = [:]
-            
+            var assets: [String: Any?] = [:]
+
             // break up data in a consumable format
             // access assets by their corresponding versions
             for asset in assetsData {
@@ -175,36 +154,31 @@ extension AssetsController {
                 versions.append(version)
                 assets[version] = files
             }
-            
+
             // get latest version
             if let latestVersion = data["version"] as? String {
                 self.version = latestVersion
             } else {
                 self.version = versions.first ?? ""
             }
-            
+
             self.assets = assets
             self.versions = versions
         }
     }
-    
-    
+
 }
-
-
 
 // MARK: - Table View Delegate
 extension AssetsController: NSTableViewDelegate, NSTableViewDataSource {
-    
-    
+
     // Set the table rows
     func numberOfRows(in tableView: NSTableView) -> Int {
         let currVersion = version ?? ""
         let currAssets = assets?[currVersion] as? [String] ?? []
         return currAssets.count
     }
-    
-    
+
     // Render asset cell rows
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         // Get library info
@@ -220,23 +194,18 @@ extension AssetsController: NSTableViewDelegate, NSTableViewDataSource {
         cell.fetchButton.tag = row
         return cell
     }
-    
-    
+
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         return false
     }
-    
-    
+
 }
-
-
 
 // MARK: - Navigatable
 extension AssetsController {
-    
-    
+
     @objc func goBack(_ sender: Any?) {
         self.navigationController!.popViewController()
     }
-    
+
 }
