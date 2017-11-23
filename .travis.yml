@@ -1,7 +1,12 @@
 language: swift
 osx_image: xcode9
-xcode_project: CDN Fetch.xcworkspace
-xcode_scheme: CDN Fetch
+
 podfile: Podfile
+
+cache: bundler
+
 before_script:
   - pod update
+
+script:
+  - ./Bin/tests
