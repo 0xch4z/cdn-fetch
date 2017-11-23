@@ -58,7 +58,39 @@
                 }
             }
         }
+        CFRelease(list);
     }
+}
+
+// returns whether the app is a login item
++ (BOOL)isLoginItem {
+    LSSharedFileListRef list = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+    NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
+    BOOL res = NO;
+    
+    if (list) {
+        UInt32 val;
+        NSArray *listArray = CFBridgingRelease(LSSharedFileListCopySnapshot(list, &val));
+        
+        for (id file in listArray) {
+            LSSharedFileListItemRef fileRef = (__bridge LSSharedFileListItemRef)file;
+            CFURLRef bundleUrl = LSSharedFileListItemCopyResolvedURL(fileRef, 0, NULL);
+        
+            if (bundleUrl) {
+                NSString *resolved = [(__bridge NSURL*)bundleUrl path];
+                
+                if ([resolved compare:bundlePath] == NSOrderedSame) {
+                    res = YES;
+                    break;
+                }
+            }
+        }
+        CFRelease(list);
+    } else {
+        NSLog(@"Error resolving the login item list");
+    }
+    
+    return res;
 }
 
 @end

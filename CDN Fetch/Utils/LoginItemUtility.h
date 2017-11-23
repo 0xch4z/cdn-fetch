@@ -16,6 +16,7 @@
 
 + (void)addToLoginItems;
 + (void)deleteFromLoginItems;
++ (BOOL)isLoginItem;
 
 @end
 

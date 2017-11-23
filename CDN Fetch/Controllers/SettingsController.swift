@@ -47,6 +47,7 @@ class SettingsController: NSViewController {
     let launchOnStartupButton: NSButton = {
         let button = NSButton(checkboxWithTitle: "launch on startup", target: nil, action: nil)
         button.alignment = .center
+        button.state = LoginItemUtility.isLoginItem() ? .on : .off
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -64,13 +65,6 @@ class SettingsController: NSViewController {
         setupCopyrightLabel()
         setupViewSourceButton()
         setupLaunchOnStartupButton()
-    }
-    
-    
-    func getInitialLaunchState() -> Bool {
-        let defaults = UserDefaults.standard
-        let launchOnStartupState = defaults.value(forKey: launchOnStartupKey) as? Bool ?? false
-        return launchOnStartupState
     }
     
     
@@ -113,7 +107,6 @@ class SettingsController: NSViewController {
     
     
     func setupLaunchOnStartupButton() {
-        launchOnStartupButton.state = getInitialLaunchState() ? .on : .off
         launchOnStartupButton.target = self
         launchOnStartupButton.action = #selector(changeLaunchOnStartup(_:))
         launchOnStartupButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
@@ -140,14 +133,12 @@ extension SettingsController {
     
     @objc func changeLaunchOnStartup(_ sender: NSButton) {
         let state = sender.state.rawValue == 1 ? true : false
-        let defaults = UserDefaults.standard
         // try to set login item preference
         if (state) {
             LoginItemUtility.addToLoginItems()
         } else {
             LoginItemUtility.deleteFromLoginItems()
         }
-        defaults.setValue(state, forKey: launchOnStartupKey)
     }
     
 }
