@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-
-xcodebuild \      
+xcodebuild \
   -workspace CDN\ Fetch.xcworkspace \
   -scheme CDN\ Fetch \
   test
